@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/plugins/dropzone/dropzone.css}">
+    <link rel="stylesheet" th:href="@{/plugins/switchery/switchery.min.css}">
+    <script th:src="@{/plugins/dropzone/dropzone.js}"></script>
+    <script th:src="@{/plugins/switchery/switchery.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/summernote/summernote-bs4.css}">
+    <script th:src="@{/plugins/summernote/summernote-bs4.min.js}"></script>
+    <script th:src="@{/plugins/summernote/lang/summernote-zh-CN.min.js}"></script>
+    <style>
+        .dropzone {
+            border: 2px dashed #0087F7;
+            border-radius: 5px;
+            background: white;
+        }
+
+        .switchery > span {
+            margin-left: 25px;
+            line-height: 28px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <h4></h4>
+        <div class="row">
+            <div class="col-5 col-sm-3">
+                <div class="nav flex-column nav-tabs  btn-group btn-group-toggle" id="vert-tabs-tab" role="tablist"
+                     aria-orientation="vertical" style="padding-top: 10px">
+                    <label style="margin-bottom: 10px" class="btn bg-olive active" id="vert-tabs-home-tab"
+                           data-toggle="pill"
+                           href="#vert-tabs-home" role="tab" aria-controls="vert-tabs-home" aria-selected="true">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked=""> <i
+                            class="fab fa-android"></i> Android
+                    </label>
+                    <label class=" btn bg-olive" id="vert-tabs-profile-tab" data-toggle="pill"
+                           href="#vert-tabs-profile" role="tab" aria-controls="vert-tabs-profile" aria-selected="false">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> <i class="fab fa-apple"></i>
+                        IOS
+                    </label>
+                </div>
+            </div>
+            <div class="col-7 col-sm-9">
+                <div class="tab-content" id="vert-tabs-tabContent">
+                    <div class="tab-pane text-center fade show active" id="vert-tabs-home" role="tabpanel"
+                         aria-labelledby="vert-tabs-home-tab">
+                        <h3><i class="fab fa-android"></i> Android</h3>
+                        <h5><b>最新的版本号：</b><span id="android-latest-version" style="color: red"
+                                                th:text="${android!=null?android.version:'0.0.0'}">0.0.0</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <b>最新的code：</b><span id="android-latest-code" style="color: red"
+                                                 th:text="${android!=null?android.versionCode:'0'}">0</span></h5>
+                        <div class="form-horizontal text-right " style="padding-top: 20px">
+                            <div class="form-group row">
+                                <label for="android-version" class="col-sm-2 col-form-label">版本号</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="android-version"
+                                           placeholder="xx.xx.xx">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="android-code" class="col-sm-2 col-form-label">code 值</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="android-code"
+                                           placeholder="xx">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="android-force" class="col-sm-2 col-form-label">是否强制更新</label>
+                                <div class="col-sm-10 text-left">
+                                    <input type="checkbox" class="js-switch" id="android-force">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="android-apk-url" class="col-sm-2 col-form-label">安装包的下载地址</label>
+                                <div class="col-sm-10 input-group mb-3">
+                                    <input type="text" class="form-control" id="android-apk-url"
+                                           placeholder="请输入安装包的下载地址">
+                                    <div class="input-group-prepend">
+                                        <button type="button" class="btn btn-primary" id="upload-apk">上传APK</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="android-title" class="col-sm-2 col-form-label">标题</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="android-title"
+                                           placeholder="请输入本次更新的标题">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="android-content" class="col-sm-2 col-form-label">更新的内容</label>
+                                <div class="col-sm-10 text-left">
+                                    <div type="text" id="android-content"
+                                         style=" min-height: calc(2.25rem + 2px) !important;border: 1px solid #ced4da;border-radius: 0.25rem;"></div>
+                                </div>
+                            </div>
+                            +
+                            <div class="form-group ">
+                                <button type="button" id="androidSave" class="btn  btn-info btn-lg">
+                                    <i class="fas fa-plus"></i>
+                                    保存
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade text-center" id="vert-tabs-profile" role="tabpanel"
+                         aria-labelledby="vert-tabs-profile-tab">
+                        <h4><i class="fab fa-apple"></i>
+                            IOS</h4>
+                        <h5><b>最新的版本号：</b><span id="ios-latest-version" style="color: red">0.0.0</span>
+                        </h5>
+                        <h5><b>上一次的更新地址：</b><span id="ios-latest-url" style="color: red"></span></h5>
+
+
+                        <div class="form-horizontal text-right " style="padding-top: 20px">
+                            <div class="form-group row">
+                                <label for="ios-version" class="col-sm-2 col-form-label">版本号</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="ios-version"
+                                           placeholder="xx.xx.xx">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="ios-force" class="col-sm-2 col-form-label">是否强制更新</label>
+                                <div class="col-sm-10 text-left">
+                                    <input type="checkbox" class="js-switch" id="ios-force">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label for="ios-title" class="col-sm-2 col-form-label">标题</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="ios-title"
+                                           placeholder="请输入本次更新的标题">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="ios-content" class="col-sm-2 col-form-label">更新的内容</label>
+                                <div class="col-sm-10 text-left" id="ios-content"
+                                     style=" min-height: calc(2.25rem + 2px) !important;border: 1px solid #ced4da;border-radius: 0.25rem;">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="ios-url" class="col-sm-2 col-form-label">ios更新的地址</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="ios-url"
+                                           placeholder="请输入本次更新的标题">
+                                </div>
+                            </div>
+
+                            <div class="form-group ">
+                                <button type="button" id="iosSave" class="btn  btn-info btn-lg">
+                                    <i class="fas fa-plus"></i>
+                                    保存
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="modal fade" id="modal-xl-android">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">android更新说明</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                <textarea id="android-textarea" placeholder="Place some text here"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="addSaveAndroid">保存</button>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+<div class="modal fade" id="modal-xl-ios">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">ios更新说明</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                <textarea id="ios-textarea" placeholder="Place some text here"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="addSaveIos">保存</button>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+
+<div class="modal fade" id="modal-xl-apk">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">上传apk</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="hidden" class="form-control" id="edit-pic-url" placeholder="apk文件">
+                    <form id="add-upload" class="dropzone">
+                        <div class="dz-message" data-dz-message>
+                            <span style="font-weight: 500">将文件拖至此处或<a style="color: blue">点击上传</a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+<script>
+    var table;
+    $(function () {
+        Dropzone.autoDiscover = false;
+        $editEnable = document.getElementById("android-force");
+        $iosEnable = document.getElementById("ios-force");
+        new Switchery($editEnable, {size: 'large'});
+        new Switchery($iosEnable, {size: 'large'});
+
+        $('#vert-tabs-home-tab').click(function () {
+            app.tokenGet('/api/web/app-version/android', null, function (data) {
+                var version = '0.0.0';
+                var code = '0';
+                if (data) {
+                    version = data.version;
+                    code = data.versionCode;
+                }
+                $("#android-latest-version").text(version);
+                $("#android-latest-code").text(code);
+            })
+        });
+
+        $('#vert-tabs-profile-tab').click(function () {
+            app.tokenGet('/api/web/app-version/ios', null, function (data) {
+                var version = '0.0.0';
+                if (data) {
+                    version = data.version;
+                }
+                $("#ios-latest-version").text(version);
+                $("#ios-latest-url").text(data.iosUrl);
+            })
+        });
+
+
+        $('#android-content').click(function () {
+            $("#modal-xl-android").modal('toggle');
+            $('#android-textarea').summernote({
+                lang: 'zh-CN'
+            });
+        });
+
+        $("#addSaveAndroid").click(function () {
+            var text = $('#android-textarea').summernote('code');
+            $("#android-content").html(text);
+
+            $("#modal-xl-android").modal('toggle');
+        });
+
+        $('#modal-xl-android').on('hidden.bs.modal', function (e) {
+            $('#textarea').summernote('destroy');
+        });
+
+        $('#upload-apk').click(function () {
+
+            $('#modal-xl-apk').modal('toggle');
+
+        });
+        $('#modal-xl-apk').on('shown.bs.modal', function (e) {
+            app.uploadFile("add-upload", 1, function (url) {
+                console.log(url);
+                $("#android-apk-url").val(url);
+                $('#modal-xl-apk').modal('toggle');
+            });
+        });
+
+        $('#androidSave').click(function () {
+            app.tokenPost('/api/web/app-version', {
+                'device': 'android',
+                'version': $('#android-version').val(),
+                'versionCode': $('#android-code').val(),
+                'forceUpdate': $editEnable.checked,
+                'androidApkPath': $('#android-apk-url').val(),
+                'title': $('#android-title').val(),
+                'content': $('#android-content').html()
+            }, function (data) {
+                $('#android-content').focusout(function () {
+                    $('#android-content').summernote('destroy');
+                });
+                Toast.success('上传成功');
+                window.location.reload();
+            });
+        });
+
+        $('#ios-content').click(function () {
+
+            $("#modal-xl-ios").modal('toggle');
+            $('#ios-textarea').summernote({
+                lang: 'zh-CN'
+            });
+        });
+
+        $('#modal-xl-ios').on('hidden.bs.modal', function (e) {
+            $('#textarea').summernote('destroy');
+        });
+
+        $("#addSaveIos").click(function () {
+            var text = $('#ios-textarea').summernote('code');
+            $("#ios-content").html(text);
+
+            $("#modal-xl-ios").modal('toggle');
+        });
+
+        $('#iosSave').click(function () {
+            app.tokenPost('/api/web/app-version', {
+                'device': 'ios',
+                'version': $('#ios-version').val(),
+                'forceUpdate': $editEnable.checked,
+                'title': $('#ios-title').val(),
+                'content': $('#ios-content').html(),
+                'iosUrl': $('#ios-url').val()
+            }, function (data) {
+                Toast.success('上传成功');
+                window.location.reload();
+            });
+        });
+    });
+
+</script>
+</html>

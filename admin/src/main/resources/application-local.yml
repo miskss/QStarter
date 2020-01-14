@@ -1,0 +1,93 @@
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      ##上传请求的大小
+      max-request-size: 150MB
+      ##上传的单文件大小
+      max-file-size: 150MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/temp_boot?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 10
+      auto-commit: true
+      minimum-idle: 5
+      max-lifetime: 30000
+      idle-timeout: 10000
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  redis:
+    database: 0
+    timeout: 1000
+    lettuce:
+      pool:
+        max-active: 200
+        max-idle: 200
+        max-wait: 1000
+  cache:
+    redis:
+      time-to-live: 48h
+      cache-null-values: false
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: TempBootQuartzScheduler
+            ##主键生成策略
+            #              instanceIdGenerator:
+            ##主键自动生成
+            instanceId: AUTO
+          threadPool:
+            threadCount: 20
+            threadsInheritContextClassLoaderOfInitializingThread: true
+          ##数据库存储
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            useProperties: true
+            misfireThreshold: 60000
+            isClustered: false
+          plugin:
+            shutdownhook:
+              class: org.quartz.plugins.management.ShutdownHookPlugin
+              cleanShutdown: true
+
+  fox:
+    swagger-open: true
+  upload:
+    ## 文件上传的根目录
+    root: /temp-boot-file
+    ## 图片存储的位置
+    picture: /img
+    ## 同一个ip在 time-to-live 时间内 短信发送次数超过 send-times 次，则封禁该ip the-ban-time 时间
+  sms:
+    ## 短信 发送频率
+    send-times: 5
+    ## IP地址调用短信接口的留存时间
+    time-to-live: 60s
+    ## ip 封禁的时长
+    the-ban-time: 24h
+    ## 是否开启万能短信验证码
+    special-sms-code-open: true
+
+    ## 万能短信验证码值
+    special-sms-code: 1234
+
+third:
+  service:
+    wx:
+      login:
+        app-id: wxdfe8f029aae192b2
+        secret: 98c137623b340a9b6c8581e79138e283

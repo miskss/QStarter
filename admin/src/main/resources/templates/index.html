@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common::tokenHeader(${@projectConfig.getProjectName()})">
+
+</head>
+
+<!-- overlayScrollbars -->
+<link rel="stylesheet" th:href="@{/plugins/overlayScrollbars/css/OverlayScrollbars.min.css}">
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+    <!-- 导航条 -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <!--   用户头像-->
+            <!--  用户昵称 -->
+            <li class="nav-item dropdown user-menu " style="margin-left: 10px;margin-right: 10px">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" style="display: inline">
+                    <img th:src="@{/img/avatar5.png}" style="width: 40px;height: 40px" class="img-circle elevation-2"
+                         alt="User Image" id="user-icon"> <span id="user-name-label">Alexander Pierce</span>
+                </a>
+                <!--  下挂的功能 -->
+                <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <!-- User image -->
+                    <li class="user-header bg-primary">
+                        <img th:src="@{/img/avatar5.png}" class="img-circle elevation-2" id="img-circle"
+                             alt="User Image">
+
+                        <p>
+                            <span id="user-name"></span> - <span id="user-role"></span>
+                            <small id="user-phone"></small>
+                        </p>
+                    </li>
+                    <!-- Menu Body -->
+                    <!--                    <li class="user-body">-->
+                    <!--                    </li>-->
+                    <!-- Menu Footer-->
+                    <li class="user-footer" style="text-align: center">
+                        <button data-toggle="modal" data-target="#modal-xl-password" class="btn btn-success ">修改密码
+                        </button>
+                        <button data-toggle="modal" data-target="#modal-xl-icon" class="btn btn-info ">修改头像</button>
+                        <button type="button" onclick="exist()" class="btn btn-danger">退出</button>
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+    </nav>
+    <!-- 左边导航栏 -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <span class="brand-link">
+            <img th:src="@{img/AdminLTELogo.png}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light" th:text="${@projectConfig.getProjectName()}">AdminLTE 3</span>
+        </span>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <li class="nav-item has-treeview" th:each="html:${htmls}" th:if="${html.isOwn()}">
+                        <a href="#" class="nav-link menu-btn" th:data-accordion="${html.getHtmlAddr()}">
+                            <i th:class="${html.getIconUrl()==null or html.getIconUrl().isEmpty()?'nav-icon fas fa-tachometer-alt':'nav-icon '+html.getIconUrl()}"></i>
+                            <p th:text="${html.getHtmlName()}">
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview" th:if="${html.getChildren()!=null}">
+                            <li class="nav-item" th:each="child:${html.getChildren()}">
+                                <a href="#" class="nav-link menu-btn"
+                                   th:if="${child.getHtmlType()=='PAGE' and child.isOwn()}"
+                                   th:data-accordion="${child.getHtmlAddr()}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p th:text="${child.getHtmlName()}"></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item" th:if="${@thymeleafService.isSuperAdmin()}">
+                        <a href="#" class="nav-link menu-btn" data-accordion="/resource/index.html">
+                            <i class="nav-icon far fa-calendar-alt"></i>
+                            <p>
+                                资源管理
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item" th:if="${@thymeleafService.isSuperAdmin()}">
+                        <a href="#" class="nav-link menu-btn" data-accordion="/page/menu.html">
+                            <i class="nav-icon far fa-calendar-alt"></i>
+                            <p>
+                                菜单管理
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item" th:if="${@thymeleafService.isSuperAdmin()}">
+                        <a href="doc.html" target="_blank" class="menu-btn " style="display: inline-block;padding: 0.5rem 1rem;">
+                            <i class="nav-icon far fa-calendar-alt"></i>
+                            <p style="display: inline-block;">
+                                接口文档
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- 主题页面 -->
+    <div class="content-wrapper">
+        <!--页面=头部-->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark" id="header-title"></h1>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-12" id="container">
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- 页脚 -->
+<!--    <footer class="main-footer">-->
+<!--        <strong>Copyright &copy; 2019 <a th:href="${@projectConfig.getDevelopUrl()}"-->
+<!--                                         th:text="${@projectConfig.getDevelopName()}">AdminLTE.io</a></strong>-->
+<!--        All rights reserved.-->
+<!--        <div class="float-right d-none d-sm-inline-block">-->
+<!--            <b>版本号 <span th:text="${@projectConfig.getVersion()}">1.0.0</span></b>-->
+<!--        </div>-->
+<!--    </footer>-->
+</div>
+
+<div class="modal fade" id="modal-xl-password">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">修改密码</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label for="oldPassword" class="col-sm-2 col-form-label">原密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="oldPassword" placeholder="原密码">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="newPassword" class="col-sm-2 col-form-label">新密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="newPassword" placeholder="新密码">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="confirmPassword" class="col-sm-2 col-form-label">确认密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="确认密码">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="changePassword">保存</button>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+<div class="modal fade" id="modal-xl-icon">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">修改头像</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="hidden" class="form-control" id="edit-pic-url" placeholder="图片地址">
+                    <form id="edit-upload" class="dropzone">
+                        <div class="dz-message" data-dz-message>
+                            <span style="font-weight: 500">将文件拖至此处或<a style="color: blue">点击上传</a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="changeIcon">保存</button>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+<div th:replace="fragments/common::commonScript"></div>
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js}"></script>
+<link rel="stylesheet" th:href="@{/plugins/dropzone/dropzone.css}">
+<script th:src="@{/plugins/dropzone/dropzone.js}"></script>
+<script>
+    (function () {
+        Dropzone.autoDiscover = false;
+        $("#user-name").text(localStorage.getItem("username"));
+        $("#user-name-label").text(localStorage.getItem("username"));
+        $("#user-phone").text(localStorage.getItem("phoneNumber"));
+        var item = localStorage.getItem("role");
+        if (!item){
+            window.location.href ="/login.html";
+        }
+        $("#user-role").text(item);
+
+        var iconUrl = localStorage.getItem("iconUrl");
+        if (iconUrl && iconUrl !== "null") {
+            $("#user-icon").attr("src", iconUrl);
+            $("#img-circle").attr("src", iconUrl);
+        }
+
+    })();
+
+
+    $("#changePassword").click(function () {
+        app.tokenPost("/api/web/user/password", {
+            "confirmPassword": $("#confirmPassword").val(),
+            "newPassword": $("#newPassword").val(),
+            "oldPassword": $("#oldPassword").val()
+        }, function () {
+            exist();
+        });
+    });
+    $('#modal-xl-icon').on('shown.bs.modal', function (e) {
+        app.uploadSingleImg("edit-upload", function (urls) {
+            $("#edit-pic-url").val(urls[0]);
+        });
+    });
+    $("#changeIcon").click(function () {
+        var val = $("#edit-pic-url").val();
+        app.tokenPut('/api/web/user/icon?icon=' + val, null, function (data) {
+            $('#modal-xl-icon').modal('toggle');
+            $("#user-icon").attr("src", val);
+            $("#img-circle").attr("src", val);
+            localStorage.setItem("iconUrl", val);
+        })
+    });
+
+    function exist() {
+        app.tokenGet("/api/web/user/logout", null, function () {
+        });
+        app.cleanToken();
+        window.location.href="/login.html";
+    }
+
+</script>
+
+</body>
+</html>

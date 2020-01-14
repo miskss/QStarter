@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: pro
+  thymeleaf:
+    cache: true
+  jpa:
+    open-in-view: false
+  session:
+    store-type: redis
+  data:
+    redis:
+      repositories:
+        enabled: false
+project:
+  project-name: temp-boot
+  develop-name: 南京途酷科技有限公司
+  develop-url: http://www.tklvyou.cn
+  version: 1.0.0
+server:
+  port: 8088

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/plugins/echarts/echarts.css}" type="text/css">
+    <script th:src="@{/plugins/echarts/echarts.min.js}"></script>
+</head>
+
+<body>
+<div class="echarts-box" id="echartsBox">
+    <div class="echarts-row">
+        <div class="echarts-col-50-100">
+            <div class="block blcok-1">
+                <div id="echartsDom1" class="echarts-dom"></div>
+                <div class="type-1">
+                    <span id="type1TagWeek" class="type-1-tag active" onclick="handleClickType1('week')">过去7天</span>
+                    <span id="type1TagMonth" class="type-1-tag" onclick="handleClickType1('month')">过去30天</span>
+                </div>
+            </div>
+        </div>
+        <div class="echarts-col-50-100">
+            <div class="block blcok-2">
+                <div id="echartsDom2" class="echarts-dom"></div>
+                <div class="type-2">
+                    <span id="type2TagWeek" class="type-2-tag active" onclick="handleClickType2('week')">过去7天</span>
+                    <span id="type2TagMonth" class="type-2-tag" onclick="handleClickType2('month')">过去30天</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="echarts-row">
+        <div class="echarts-col-50-100">
+            <div class="echarts-row">
+                <div class="echarts-col-50">
+                    <div class="block">
+                        <div id="echartsDom3" class="echarts-dom"></div>
+                        <div id="echarts3Num" class="echarts-3-num"></div>
+                    </div>
+                </div>
+                <div class="echarts-col-50">
+                    <div class="block ">
+                        <div id="echartsDom4" class="echarts-dom"></div>
+                        <div id="echarts4Num" class="echarts-4-num"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="echarts-col-50-100">
+            <div class="echarts-row">
+                <div class="echarts-col-50">
+                    <div class="block block-5">
+                        <div class="block-5-title">累计金币</div>
+                        <div class="block-5-text-1" th:text="${sumWithdrawGold}">0</div>
+                        <div class="block-5-title">累计提现</div>
+                        <div class="block-5-text-2" th:text="${sumWithdrawMoney}">0</div>
+                    </div>
+                </div>
+                <div class="echarts-col-50">
+                    <div class="block block-6">
+                        <div id="echartsDom6" class="echarts-dom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $("#echartsBox").ready(function () {
+        initEcharts1();
+        handleClickType1(echartsType1);
+        initEcharts2();
+        handleClickType2(echartsType2);
+        initEcharts3();
+        initEcharts4();
+        getCommonData();
+        initEcharts6();
+        getData6();
+        document.getElementById('echartsBox').removeEventListener("resize",onResize)
+        document.getElementById('echartsBox').addEventListener("resize", onResize)
+    });
+
+    function onResize() {
+        echartsExample1.resize();
+        echartsExample2.resize();
+        echartsExample3.resize();
+        echartsExample4.resize();
+        echartsExample6.resize();
+   }
+     // 第一个块
+    var echartsType1 = "week";
+    var echartsExample1 = null;
+
+    function handleClickType1(type) {
+        echartsType1 = type;
+        var url = '/api/web/statistic/user/7';
+        if (type === "month") {
+            url = '/api/web/statistic/user/30';
+            document.getElementById("type1TagWeek").className = "type-1-tag";
+            document.getElementById("type1TagMonth").className = "type-1-tag active";
+        } else if (type === "week") {
+            document.getElementById("type1TagWeek").className = "type-1-tag active";
+            document.getElementById("type1TagMonth").className = "type-1-tag";
+        }
+        getData1(url);
+    }
+
+    // 获取数据
+    function getData1(url) {
+        var data = {};
+
+        app.tokenGet(url, null, function (result) {
+            var x = [], y = [];
+
+            result.forEach(function (item) {
+                x.push(item.today);
+                y.push(item.todayRegisterNum);
+            });
+            data.x = x;
+            data.y = y;
+            upData1(data)
+        });
+    }
+
+    // 获取配置
+    function getOption1(data) {
+        return {
+            title: {
+                text: "会员增长量",
+                left: 20,
+                textStyle: {
+                    fontSize: 20
+                }
+            },
+            tooltip: {
+                show: "true",
+                trigger: 'axis',
+                backgroundColor: "rgba(0,0,0,0.4)", // 背景
+                padding: [8, 10]
+            },
+            grid: {
+                bottom: 20,
+                left: 50,
+                right: 10
+            },
+            xAxis: {
+                type: 'category',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    color: "#FD8888"
+                },
+                splitLine: {
+                    show: false
+                },
+                data: data.x
+            },
+            yAxis: {
+                type: 'value',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    color: "#FD8888"
+                },
+                splitLine: {
+                    show: false
+                },
+            },
+            series: [{
+                data: data.y,
+                type: 'line',
+                smooth: true,
+                lineStyle: {
+                    width: 2
+                },
+                areaStyle: {
+                    normal: {
+                        show: true,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {offset: 0, color: "#FD8888"},
+                            {offset: 0.5, color: "#FFEFEF"},
+                            {offset: 1, color: "#ffffff"}
+                        ])
+                    }
+                },
+            }]
+        };
+
+    }
+
+    // 初始化表格
+    function initEcharts1() {
+        var echartsDom1 = document.getElementById('echartsDom1')
+        echartsExample1 = echarts.init(echartsDom1)
+    }
+
+    // 更新数据
+    function upData1(data) {
+        echartsExample1.setOption(getOption1(data), true)
+    }
+
+
+    // 第二个块
+    var echartsType2 = "week";
+    var echartsExample2 = null;
+
+    function handleClickType2(type) {
+        echartsType2 = type;
+        var url = '';
+        if (type === "month") {
+            document.getElementById("type2TagWeek").className = "type-2-tag";
+            document.getElementById("type2TagMonth").className = "type-2-tag active";
+            url = '/api/web/statistic/active-user/30';
+        } else if (type === "week") {
+            document.getElementById("type2TagWeek").className = "type-2-tag active";
+            document.getElementById("type2TagMonth").className = "type-2-tag";
+            url = '/api/web/statistic/active-user/7';
+        } else {
+            url = '/api/web/statistic/active-user/7';
+        }
+        getData2(url);
+    }
+
+    // 获取数据
+    function getData2(url) {
+        var data = {};
+        app.tokenGet(url, null, function (result) {
+            var x = [];
+            var y1 = [];
+            var y2 = [];
+            result.forEach(function (item) {
+                x.push(item.statisticDate);
+                y1.push(item.appUserNum);
+                y2.push(item.activeUserNum);
+            });
+            data.x = x;
+            data.y1 = y1;
+            data.y2 = y2;
+            upData2(data);
+        });
+    }
+
+    // 获取配置
+    function getOption2(data) {
+        return {
+            title: {
+                text: "活跃会员占比",
+                left: 20,
+                textStyle: {
+                    fontSize: 20
+                }
+            },
+            tooltip: {
+                show: "true",
+                trigger: 'axis',
+                backgroundColor: "rgba(0,0,0,0.4)", // 背景
+                padding: [8, 10],
+                formatter: function (params, ticket) {
+                    params = params[0];
+                    return data.x[params.dataIndex] + "：\n单日总人数" + data.y1[params.dataIndex] + "人。\n当日活跃人数" + data.y2[params.dataIndex] + "人。"
+                }
+            },
+            grid: {
+                bottom: 20,
+                left: 50,
+                right: 30
+            },
+            xAxis: {
+                type: 'category',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    color: "#FD8888"
+                },
+                splitLine: {
+                    show: false
+                },
+                data: data.x
+            },
+            yAxis: {
+                type: 'value',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    color: "#FD8888"
+                },
+                splitLine: {
+                    show: false
+                },
+            },
+            series: [{
+                data: data.y1,
+                type: 'bar',
+                smooth: true,
+                barGap: "-100%",
+                zlevel: 1,
+                barMaxWidth: 20,
+                itemStyle: {
+                    barBorderRadius: [5, 5, 5, 5],
+                    color: "#FEE1E1",
+                },
+                emphasis: {
+                    itemStyle: {
+                        barBorderRadius: [5, 5, 5, 5],
+                        color: "#FEE1E1",
+                        zlevel: 1
+                    },
+                }
+            }, {
+                data: data.y2,
+                type: 'bar',
+                smooth: true,
+                zlevel: 10,
+                barMaxWidth: 20,
+                itemStyle: {
+                    barBorderRadius: [5, 5, 5, 5],
+                    color: "#FD8888",
+                },
+                emphasis: {
+                    itemStyle: {
+                        barBorderRadius: [5, 5, 5, 5],
+                        color: "#FD8888",
+                    }
+                }
+            }]
+        };
+
+    }
+
+    // 初始化表格
+    function initEcharts2() {
+        var echartsDom2 = document.getElementById('echartsDom2')
+        echartsExample2 = echarts.init(echartsDom2)
+    }
+
+    // 更新数据
+    function upData2(data) {
+        echartsExample2.setOption(getOption2(data), true)
+    }
+
+
+    // 第三个块
+    var echartsExample3 = null;
+
+
+    function getCommonData() {
+        var x = [];
+
+        var onLine = [];
+
+        var total = [];
+
+        app.tokenGet("/api/web/statistic/user/30", null, function (result) {
+            result.forEach(function (item) {
+
+                x.push(item.today);
+                onLine.push(item.todayOnlineNum);
+                total.push(item.totalUsers);
+            });
+
+            upData3({x: x, y: total});
+            upData4({x: x, y: onLine});
+        });
+
+
+    }
+
+
+    // 获取数据
+
+    // 获取配置
+    function getOption3(data) {
+        return {
+            title: {
+                text: "用户总量",
+                top: 30,
+                left: 10,
+                textStyle: {
+                    fontSize: 20
+                }
+            },
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                backgroundColor: "rgba(0,0,0,0.4)", // 背景
+                padding: [8, 10],
+                formatter: function (params) {
+                    echartsExample3.dispatchAction({
+                        type: 'hideTip'
+                    })
+                    document.getElementById('echarts3Num').innerText = params[0].data
+                    return params[0].data
+                }
+            },
+            grid: {
+                bottom: 40,
+                top:80,
+                left: 50,
+                right: 10
+            },
+            xAxis: {
+                type: 'category',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    color: "#F1921F"
+                },
+                splitLine: {
+                    show: false
+                },
+                data: data.x
+            },
+            yAxis: {
+                type: 'value',
+                color:"#F1921F",
+
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    color: "#F1921F"
+                },
+                splitLine: {
+                    show: false
+                },
+            },
+            series: [{
+                data: data.y,
+                type: 'line',
+                symbol: 'circle',//折线点设置为实心点
+                smooth: true,
+                showSymbol: false,
+                lineStyle: {
+                    width: 2
+                },
+                itemStyle: {
+                    borderWidth: 0,
+                    color: "#F1921F"
+                },
+                emphasis: {
+                    itemStyle: {
+                        show: true
+                    },
+                },
+                areaStyle: {
+                    normal: {
+                        show: true,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {offset: 0, color: "#FFF3F1"},
+                            {offset: 1, color: "#ffffff"}
+                        ])
+                    }
+                },
+            }]
+        };
+    }
+
+    // 初始化表格
+    function initEcharts3() {
+        var echartsDom3 = document.getElementById('echartsDom3')
+        echartsExample3 = echarts.init(echartsDom3)
+        echartsDom3.addEventListener('mouseout', function (e) {
+            document.getElementById('echarts3Num').innerText = ""
+        })
+    }
+
+    // 更新数据
+    function upData3(data) {
+        echartsExample3.setOption(getOption3(data), true)
+    }
+
+
+    // 第四个块
+    var echartsExample4 = null
+
+    // 获取数据
+    function getData4() {
+        var data = {
+            x: ['2/1', '2/2', '2/3', '2/4', '2/5', '2/6', '2/7', '2/8', '2/9', '2/10', '2/11', '2/12', '2/13', '2/14', '2/15', '2/16', '2/17', '2/18', '2/19', '2/20', '2/21', '2/22', '2/23', '2/24', '2/25', '2/26', '2/27', '2/28', '2/29', '2/30'],
+            y: [820, 932, 901, 934, 1290, 1330, 1320, 820, 932, 901, 934, 1290, 1330, 1320, 820, 932, 901, 934, 1290, 1330, 1320, 820, 932, 901, 934, 1290, 1330, 1320, 820, 932]
+        }
+        upData4(data)
+    }
+
+    // 获取配置
+    function getOption4(data) {
+        return {
+            title: {
+                text: "在线用户",
+                top: 30,
+                left: 10,
+                textStyle: {
+                    fontSize: 20
+                }
+            },
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                backgroundColor: "rgba(0,0,0,0.4)", // 背景
+                padding: [8, 10],
+                formatter: function (params) {
+                    echartsExample4.dispatchAction({
+                        type: 'hideTip'
+                    })
+                    document.getElementById('echarts4Num').innerText = params[0].data
+                    return params[0].data
+                }
+            },
+            grid: {
+                bottom: 40,
+                top:80,
+                left: 50,
+                right: 10
+            },
+            xAxis: {
+                type: 'category',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    color: "#8570F0"
+                },
+                splitLine: {
+                    show: false
+                },
+                data: data.x
+            },
+            yAxis: {
+                type: 'value',
+                color:"#8570F0",
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    color: "#8570F0"
+                },
+                splitLine: {
+                    show: false
+                },
+            },
+            series: [{
+                data: data.y,
+                type: 'line',
+                symbol: 'circle',//折线点设置为实心点
+                smooth: true,
+                showSymbol: false,
+                lineStyle: {
+                    width: 2
+                },
+                itemStyle: {
+                    borderWidth: 0,
+                    color: "#8570F0"
+                },
+                emphasis: {
+                    itemStyle: {
+                        show: true
+                    },
+                },
+                areaStyle: {
+                    normal: {
+                        show: true,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {offset: 0, color: "#E8E4FC"},
+                            {offset: 1, color: "#ffffff"}
+                        ])
+                    }
+                },
+            }]
+        };
+    }
+
+    // 初始化表格
+    function initEcharts4() {
+        var echartsDom4 = document.getElementById('echartsDom4')
+        echartsExample4 = echarts.init(echartsDom4)
+        echartsDom4.addEventListener('mouseout', function (e) {
+            document.getElementById('echarts4Num').innerText = ""
+        })
+    }
+
+    // 更新数据
+    function upData4(data) {
+        echartsExample4.setOption(getOption4(data), true)
+    }
+
+
+    // 第四个块
+    var echartsExample6 = null
+
+    // 获取数据
+    function getData6() {
+        var legend = [];
+        var val = [];
+        app.tokenGet("/api/web/vip/count", null, function (result) {
+            result.forEach(function (item) {
+                legend.push(item.vipName);
+                var $data = {
+                    value: item.count,
+                    name: item.vipName
+                };
+                val.push($data);
+            });
+            var data = {
+                legend: legend,
+                data: val
+            };
+            upData6(data);
+        });
+
+    }
+
+    // 获取配置
+    function getOption6(data) {
+        return {
+            title: {
+                text: "VIP占比",
+                top: 22,
+                left: 18,
+                bottom: 10,
+                textStyle: {
+                    fontSize: 20
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                top: 60,
+                bottom: 50,
+                left: 10,
+                // y: 'center',
+                itemGap: 20,
+                data: data.legend,
+                type: 'scroll'
+            },
+            series: [
+                {
+                    name: '等级明细',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    center: ['60%', '50%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data: data.data
+                }
+            ]
+        };
+    }
+
+    // 初始化表格
+    function initEcharts6() {
+        var echartsDom6 = document.getElementById('echartsDom6')
+        echartsExample6 = echarts.init(echartsDom6)
+    }
+
+    // 更新数据
+    function upData6(data) {
+        echartsExample6.setOption(getOption6(data), true)
+    }
+
+
+</script>
+</body>
+
+</html>

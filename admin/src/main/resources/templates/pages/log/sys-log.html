@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>系统日志</title>
+    <script th:src="@{/plugins/datarangepicker/moment.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/plugins/datarangepicker/daterangepicker.css}">
+    <script th:src="@{/plugins/datarangepicker/daterangepicker.js}"></script>
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <div class="row" style="margin-bottom: 10px; margin-right: 20px;justify-content: flex-end;">
+            <label for="register-time" class="col-form-label">时间：</label>
+            <div class="col-lg-3">
+                <input type="text" name="register-datepicker " class="form-control" id="register-time"
+                       placeholder="时间" readonly>
+            </div>
+            &nbsp;&nbsp;
+            <div class="col-1">
+                <input type="text" class="form-control" id="webUser" placeholder="操作人">
+            </div>
+            <div>
+                <button type="button" id="search-btn" class="btn  btn-primary">
+                    <i class="fas fa-search"></i>
+                    搜索
+                </button>
+            </div>
+        </div>
+
+
+        <table id="example2" class="table table-bordered table-hover col-sm-12"
+               style="text-align: center;padding: 0">
+            <thead>
+            <tr>
+                <th style="width: 5%">序号</th>
+                <th>时间</th>
+                <th>操作人</th>
+                <th>操作</th>
+                <th style="width: 8%">操作类型</th>
+                <th style="width:30%">操作内容</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+<!-- /.card-body -->
+</body>
+<script th:src="@{/plugins/select2/js/select2.full.min.js}"></script>
+<script>
+    var table,startTime,endTime;
+    $(function () {
+        table = app.dataTables('example2', "/api/web/log/sys-log", function (dtlsParameters) {
+            dtlsParameters.webUser = $("#webUser").val();
+            dtlsParameters.startTime = startTime;
+            dtlsParameters.endTime = endTime;
+        }, true, false, [
+            {"data": "idx"},
+            {"data": "createTime"},
+            {"data": "webUser"},
+            {"data": "title"},
+            {
+                "data": "actionType"
+            },
+            {
+                "data": "content"
+            }
+        ]);
+        $('#register-time').daterangepicker({
+            timePicker: true,
+            timePicker24Hour: true,
+            timePickerSeconds: true,
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: '清除'
+            },
+            maxDate: new Date()
+        });
+
+        $('#register-time').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val(picker.startDate.format('YYYY/MM/DD HH:mm:ss') + ' - ' + picker.endDate.format('YYYY/MM/DD HH:mm:ss'));
+            startTime = picker.startDate._d.getTime();
+            endTime = picker.endDate._d.getTime();
+
+        });
+
+        $('#register-time').on('cancel.daterangepicker', function(ev, picker) {
+            $(this).val('');
+            startTime = null;
+            endTime = null;
+        });
+        //搜索
+        $('#search-btn').click(function () {
+            table.ajax.reload();
+        });
+    });
+
+
+</script>
+</html>

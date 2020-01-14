@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单和页面管理</title>
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <div style="text-align: right;margin-bottom: 10px; margin-right: 20px">
+            <button type="button" class="btn  btn-primary" data-toggle="modal" id="addButton"
+                    th:if="${@thymeleafService.isSuperAdmin()}">
+                <i class="fas fa-plus"></i>
+                新增
+            </button>
+
+            <button type="button" id="editButton" class="btn  btn-info" data-toggle="modal"
+                    th:if="${@thymeleafService.isSuperAdmin()}">
+                <i class="fas fa-edit"></i>
+                编辑
+            </button>
+            <!--            <button type="button"  id="delButton" class="btn  btn-danger" data-toggle="modal"-->
+            <!--                    th:if="${@thymeleafService.isSuperAdmin()}">-->
+            <!--                <i class="fas fa-trash-alt"></i>-->
+            <!--                删除-->
+            <!--            </button>-->
+        </div>
+        <table id="example2" class="table table-bordered table-hover col-sm-12">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>id</th>
+                <th>页面名称</th>
+                <th>页面地址</th>
+                <th>页面类型</th>
+                <th>图标</th>
+                <th>父级id</th>
+                <th>排序</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">新增页面</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="htmlName" class="col-sm-2 col-form-label">页面名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="htmlName" placeholder="页面名称">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="htmlAddr" class="col-sm-2 col-form-label">页面地址</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="htmlAddr" placeholder="页面地址">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="htmlType" class="col-sm-2 col-form-label">页面类型</label>
+                        <select class="form-control select2 col-sm-10" id="htmlType">
+                            <option value="PAGE" selected="selected">页面</option>
+                            <option value="FUNC">功能</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="parentId" class="col-sm-2 col-form-label">父页面id</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="parentId" placeholder="父页面id" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="iconUrl" class="col-sm-2 col-form-label">图标地址或类名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="iconUrl" placeholder="图标">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="sortNum" class="col-sm-2 col-form-label">排序序号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="sortNum" placeholder="排序序号" value="0">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="resourceIds" class="col-sm-2 col-form-label">资源列表</label>
+                        <select class="select2  col-sm-10" id="resourceIds" multiple="multiple" style="width: 80%;">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="addSave">保存</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /编辑 -->
+    <div class="modal fade" id="modal-xl-edit">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <h4 class="modal-title">修改页面</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="edit-htmlName" class="col-sm-2 col-form-label">页面名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="edit-htmlName" placeholder="页面名称">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="edit-htmlAddr" class="col-sm-2 col-form-label">页面地址</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="edit-htmlAddr" placeholder="页面地址">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="edit-htmlType" class="col-sm-2 col-form-label">页面类型</label>
+                        <select class="form-control select2 col-sm-10" id="edit-htmlType">
+                            <option value="PAGE" selected="selected">页面</option>
+                            <option value="FUNC">功能</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="edit-parentId" class="col-sm-2 col-form-label">父页面id</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="edit-parentId" placeholder="父页面id" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="edit-iconUrl" class="col-sm-2 col-form-label">图标地址或类名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="edit-iconUrl" placeholder="图标">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="edit-sortNum" class="col-sm-2 col-form-label">排序序号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="edit-sortNum" placeholder="排序序号" value="0">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="edit-resourceIds" class="col-sm-2 col-form-label">资源列表</label>
+                        <select class="select2  col-sm-10" id="edit-resourceIds" multiple="multiple"
+                                style="width: 80%;">
+
+                        </select>
+                    </div>
+
+                    <input type="hidden" id="id">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="editSave">保存</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+
+
+</div>
+<!-- /.card-body -->
+</body>
+<script th:src="@{/plugins/select2/js/select2.full.min.js}"></script>
+<script>
+    $(function () {
+        var table = app.dataTables('example2', "/api/web/html", null, true, false, [
+            {"data": "idx"},
+            {"data": "htmlId"},
+            {"data": "htmlName"},
+            {"data": "htmlAddr"},
+            {
+                "data": "htmlType", render: function (data) {
+                    if (data === "PAGE") {
+                        return "页面";
+                    } else {
+                        return "功能按钮";
+                    }
+                }
+            },
+            {"data": "iconUrl"},
+            {"data": "parentId"},
+            {'data': "sortNum"}
+        ], true, true);
+        //新增
+        $('#resourceIds').select2();
+        //新增页面
+        $("#addButton").click(function () {
+            $("#resourceIds").select2({
+                tags: true
+            });
+            //加载资源列表
+            app.tokenGet("/api/web/resources/search", null, function (result) {
+                var data = [];
+                result.forEach(function (item) {
+                    data.push({
+                        id: item.id,
+                        text: item.resourceName
+                    });
+                });
+                $("#resourceIds").select2({
+                    data: data
+                });
+            });
+            $("#modal-xl").modal('toggle');
+        });
+
+
+        $("#addSave").click(function () {
+            var htmlName = $("#htmlName").val();
+            var htmlAddr = $("#htmlAddr").val();
+            var htmlType = $("#htmlType").val();
+            var parentId = $("#parentId").val();
+            var sortNum = $("#sortNum").val();
+            var resourceIds = $("#resourceIds").val();
+
+
+            if (!htmlName) {
+                Toast.error('页面名称不能为空');
+                return;
+            }
+            app.tokenPost('/api/web/html', {
+                'htmlName': htmlName,
+                'htmlAddr': htmlAddr,
+                'htmlType': htmlType,
+                'parentId': parentId !== '0' ? parentId : null,
+                'sortNum': sortNum,
+                'iconUrl': $("#iconUrl").val(),
+                'resourceIds': resourceIds
+            }, function (data) {
+                Toast.success("页面新增成功");
+                table.ajax.reload(null,false);
+                $("#modal-xl").modal('toggle');
+            }, function (result) {
+                Toast.error(result.errorMsg);
+                $("#modal-xl").modal('toggle');
+            });
+        });
+        /**
+         * 编辑
+         */
+        $('#edit-resourceIds').select2();
+        $("#editButton").click(function () {
+            var row = table.rows('.selected').data()[0];
+            if (!row) {
+                Toast.warn("请选择要操作的数据！");
+                return;
+            }
+
+            $("#edit-resourceIds").select2({
+                tags: true
+            });
+            //加载资源列表
+            app.tokenGet("/api/web/resources/search", null, function (result) {
+                var data = [];
+                result.forEach(function (item) {
+                    data.push({
+                        id: item.id,
+                        text: item.resourceName
+                    });
+                });
+                $("#edit-resourceIds").select2({
+                    data: data
+                });
+                app.tokenGet("/api/web/html/detail?htmlId=" + row.htmlId, null, function (result) {
+                    console.log(result);
+                    var resourceIds = [];
+                    result.resources.forEach(function (data) {
+                        resourceIds.push(data.id)
+                    });
+                    $("#edit-resourceIds").val(resourceIds).select2();
+                });
+            });
+
+            $("#edit-htmlName").val(row.htmlName);
+            $("#edit-htmlAddr").val(row.htmlAddr);
+            $("#edit-htmlType").val(row.htmlType);
+            $("#edit-parentId").val(row.parentId);
+            $("#edit-sortNum").val(row.sortNum);
+            $("#id").val(row.htmlId);
+            $("#modal-xl-edit").modal('toggle');
+        });
+        $("#editSave").click(function () {
+            var htmlName = $("#edit-htmlName").val();
+            var htmlAddr = $("#edit-htmlAddr").val();
+            var htmlType = $("#edit-htmlType").val();
+            var parentId = $("#edit-parentId").val();
+            var sortNum = $("#edit-sortNum").val();
+            var resourceIds = $("#edit-resourceIds").val();
+
+
+            if (!htmlName) {
+                Toast.error('页面名称不能为空');
+                return;
+            }
+            app.tokenPut('/api/web/html', {
+                'htmlName': htmlName,
+                'htmlAddr': htmlAddr,
+                'htmlType': htmlType,
+                'parentId': parentId !== '0' ? parentId : null,
+                'sortNum': sortNum,
+                'iconUrl': $("#edit-iconUrl").val(),
+                'resourceIds': resourceIds,
+                "htmlId": $("#id").val()
+            }, function (data) {
+                Toast.success("页面修改成功");
+                table.ajax.reload(null,false);
+                $("#modal-xl-edit").modal('toggle');
+            }, function (result) {
+                Toast.error(result.errorMsg);
+                $("#modal-xl-edit").modal('toggle');
+            });
+        });
+
+    });
+</script>
+</html>

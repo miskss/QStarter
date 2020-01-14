@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/plugins/select2/css/select2.min.css}">
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <div style="text-align: right;margin-bottom: 10px; margin-right: 20px">
+            <button type="button" class="btn  btn-primary" data-toggle="modal" data-target="#modal-xl">
+                <i class="fas fa-plus"></i>
+                新增
+            </button>
+            <!--            <button type="button" class="btn  btn-primary">Primary</button>-->
+            <!--            <button type="button" class="btn  btn-primary">Primary</button>-->
+        </div>
+        <table id="example2" class="table table-bordered table-hover col-sm-12">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>接口名称</th>
+                <th>接口的操作类型</th>
+                <th>接口的地址</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">新增资源</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="resourceName" class="col-sm-2 col-form-label">资源名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="resourceName" placeholder="资源名称">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="resourceUrl" class="col-sm-2 col-form-label">资源的地址</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="resourceUrl" placeholder="资源的地址">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="operation" class="col-sm-2 col-form-label">资源的操作类型</label>
+                        <select class="form-control select2 col-sm-10" id="operation">
+                            <option selected="selected">GET</option>
+                            <option>POST</option>
+                            <option>PUT</option>
+                            <option>DELETE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="addSave">保存</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.card-body -->
+</div>
+<script th:src="@{/plugins/select2/js/select2.full.min.js}"></script>
+<script>
+    $(function () {
+        var table = app.dataTables("example2","/api/web/resources",null,true,false,[
+            {data:'idx'},
+            {"data": "resourceName"},
+            {"data": "operation"},
+            {
+                "data": "resourceUrl"
+            }]);
+
+        $("#addSave").click(function () {
+            var operation = $("#operation").val();
+            var resourceName = $("#resourceName").val();
+            var resourceUrl = $("#resourceUrl").val();
+            if (!resourceName) {
+                Toast.error('资源名称不能为空');
+                return;
+            }
+            if (!resourceUrl) {
+                Toast.error('资源地址不能为空');
+                return;
+            }
+            app.tokenPost('/api/web/resources', {
+                'operation': operation,
+                'resourceName': resourceName,
+                'resourceUrl': resourceUrl
+            }, function (data) {
+                Toast.success("资源新增成功");
+                table.ajax.reload();
+                $("#modal-xl").modal('toggle');
+            }, function (result) {
+                Toast.error(result.errorMsg);
+                $("#modal-xl").modal('toggle');
+            });
+        });
+    });
+</script>
+</body>
+</html>

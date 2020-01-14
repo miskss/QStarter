@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>人员管理</title>
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <div style="text-align: right;margin-bottom: 10px; margin-right: 20px">
+            <button th:if="${@thymeleafService.hasFuncAuthority('新增人员')}" type="button" class="btn  btn-primary" data-toggle="modal" id="addButton">
+                <i class="fas fa-plus"></i>
+                新增
+            </button>
+            <button th:if="${@thymeleafService.hasFuncAuthority('修改人员')}" type="button" class="btn  btn-info" data-toggle="modal" id="editButton">
+                <i class="fas fa-edit"></i>
+                修改
+            </button>
+            <button th:if="${@thymeleafService.hasFuncAuthority('删除人员')}" type="button" class="btn  btn-danger" data-toggle="modal" id="delButton">
+                <i class="fas fa-trash-alt"></i>
+                删除
+            </button>
+        </div>
+        <table id="example2" class="table table-bordered table-hover col-sm-12">
+            <thead>
+            <tr>
+                <th style="width: 5%;text-align: center">序号</th>
+                <th style="width: 25%">用户名</th>
+                <th style="width: 25%">手机号</th>
+                <th style="width: 30%">角色</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header sidebar-dark-primary" style="color: #ffffff">
+                    <h4 class="modal-title">新增</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: #ffffff">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="username" class="col-sm-2 col-form-label">用户名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="username" placeholder="用户名">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phoneNumber" class="col-sm-2 col-form-label">手机号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="phoneNumber" placeholder="手机号">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="password" class="col-sm-2 col-form-label">登录密码</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="password" placeholder="登录密码">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="roleIds" class="col-sm-2 col-form-label">角色选择</label>
+                        <select class="select2  col-sm-10" id="roleIds" multiple="multiple" style="width: 80%;">
+
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="addSave">保存</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <div class="modal fade" id="modal-edit">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header sidebar-dark-primary" style="color: #ffffff">
+                    <h4 class="modal-title">修改</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: #ffffff">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="edit-username" class="col-sm-2 col-form-label">用户名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="edit-username" placeholder="用户名">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="edit-phoneNumber" class="col-sm-2 col-form-label">手机号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="edit-phoneNumber" placeholder="手机号">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="edit-password" class="col-sm-2 col-form-label">登录密码</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="edit-password" placeholder="登录密码">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="edit-roleIds" class="col-sm-2 col-form-label">角色选择</label>
+                        <select class="select2  col-sm-10" id="edit-roleIds" multiple="multiple" style="width: 80%;">
+
+                        </select>
+                    </div>
+                    <input type="hidden" id="id">
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="editSave">保存</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+
+
+</div>
+<!-- /.card-body -->
+
+
+</body>
+<script th:src="@{/plugins/select2/js/select2.full.min.js}"></script>
+
+<script>
+    var table;
+    $(function () {
+
+        table = app.dataTables('example2', "/api/web/manage-user", null, true, false, [
+            {data: 'idx'},
+            {data: "username"},
+            {data: "phoneNumber"},
+            {
+                data: "roles", "render": function (data, type, full, meta) {
+                    var roleName = [];
+
+                    data.forEach(function (role) {
+                        roleName.push(role.roleDescription);
+                    });
+
+                    return roleName;
+                }
+            }
+        ], true);
+        /**
+         * 新增
+         */
+        $('#roleIds').select2();
+        $('#edit-roleIds').select2();
+        //新增页面
+        $("#addButton").click(function () {
+            $("#roleIds").select2({
+                tags: true
+            });
+            //加载资源列表
+            app.tokenGet("/api/web/roles", null, function (result) {
+                var data = [];
+                result.forEach(function (item) {
+                    data.push({
+                        id: item.roleId,
+                        text: item.roleDescription
+                    });
+                });
+                $("#roleIds").select2({
+                    data: data
+                });
+            });
+            $("#modal-xl").modal('toggle');
+        });
+
+
+        $("#addSave").click(function () {
+            app.tokenPost('/api/web/manage-user', {
+                'username': $("#username").val(),
+                'password': $("#password").val(),
+                'phoneNumber': $("#phoneNumber").val(),
+                'roleIds': $("#roleIds").val(),
+            }, function (data) {
+                Toast.success("新增用户成功");
+                // table.ajax.reload();
+                $("#modal-xl").modal('toggle');
+                location.reload();
+            }, function (result) {
+                Toast.error(result.errorMsg);
+                $("#modal-xl").modal('toggle');
+            });
+        });
+
+        /**
+         * 编辑
+         * @param data
+         */
+        $("#editButton").click(function () {
+            var row = table.rows('.selected').data()[0];
+            if (!row) {
+                Toast.error("请先选择用户");
+                return;
+            }
+            var role = $("#edit-roleIds");
+            role.select2({
+                tags: true
+            });
+
+            //加载资源列表
+            app.tokenGet("/api/web/roles", null, function (result) {
+                var data = [];
+                result.forEach(function (item) {
+                    data.push({
+                        id: item.roleId,
+                        text: item.roleDescription
+                    });
+                });
+                role.select2({
+                    data: data
+                });
+                var roleIds = [];
+                row.roles.forEach(function (d) {
+                    roleIds.push(d.roleId);
+                });
+                $("#edit-username").val(row.username);
+                $("#edit-phoneNumber").val(row.phoneNumber);
+                $("#id").val(row.id);
+                role.val(roleIds).select2();
+                $("#modal-edit").modal('toggle');
+            });
+
+        });
+
+        $("#editSave").click(function () {
+            app.tokenPut('/api/web/manage-user', {
+                'username': $("#edit-username").val(),
+                'password': $("#edit-password").val(),
+                'phoneNumber': $("#edit-phoneNumber").val(),
+                'userId': $("#id").val(),
+                'roleIds': $("#edit-roleIds").val()
+            }, function (data) {
+                Toast.success("修改用户成功");
+                table.ajax.reload();
+                $("#modal-edit").modal('toggle');
+            }, function (result) {
+                Toast.error(result.errorMsg);
+                $("#modal-edit").modal('toggle');
+            });
+        });
+
+        /**
+         * 删除
+         */
+        $("#delButton").click(function () {
+            var row = table.rows('.selected').data()[0];
+            if (!row) {
+                Toast.error("请先选择用户");
+                return;
+            }
+
+            Toast.confirm("提示", "确认要删除用户" + row.username + "吗？", function () {
+                app.tokenDelete('/api/web/manage-user?userId=' + row.id, null, function (data) {
+                    Toast.success("用户删除成功");
+                    table.ajax.reload();
+                }, function (result) {
+                    Toast.error(result.errorMsg);
+                    table.ajax.reload();
+                });
+            })
+
+
+        });
+    });
+
+
+
+
+
+</script>

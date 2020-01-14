@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>系统白名单</title>
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <div class="row" style="margin-bottom: 10px; margin-right: 20px;justify-content: flex-end;">
+            <div>
+                <button th:if="${@thymeleafService.hasFuncAuthority('设置白名单')}" type="button" id="search-btn"
+                        class="btn  btn-primary">
+                    <i class="fas fa-edit"></i>
+                    修改白名单
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 ">
+                <!-- textarea -->
+                <div class="form-group">
+                    <textarea class="form-control" id="ips" rows="4" th:text="${ip}" placeholder="Enter ..."
+                              disabled></textarea>
+                </div>
+            </div>
+            <div>
+                <button th:if="${@thymeleafService.hasFuncAuthority('设置白名单')}" type="button" id="save-btn"
+                        class="btn  btn-info" style="vertical-align: bottom;display: none">
+                    保存修改
+                </button>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <b>备注：</b>
+            <p>
+                如果白名单中有 <span style="color: #d35400;font-size: 1.2rem;font-weight: 500">0.0.0.0</span> 则表示 放行所有的ip。
+                多个ip地址之间使用英文符号 &nbsp;<span style="color: red;font-size: 1.5rem;font-weight: 500">;</span> &nbsp;隔开。
+            </p>
+        </div>
+        <div>
+            <b>示例:</b>
+            <p>
+                1. <b>0.0.0.0;100.10.21.23</b> 因为里面包含了0.0.0.0 这个ip所以所有ip地址都可访问;
+            </p>
+            <p>
+                2. <b>46.13.39.21;100.10.21.23</b> 表示只有这两个ip地址可以访问系统。
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    $("#search-btn").click(function () {
+        $("#ips").prop('disabled', false);
+        $("#save-btn").show();
+    });
+
+
+    $("#save-btn").click(function () {
+        var ips = $("#ips").val();
+        if (!ips) {
+            Toast.error("ip 地址不能为空");
+            return;
+        }
+        app.tokenPost("/api/web/white-list", {
+            ips: ips
+        }, function () {
+            $("#ips").prop('disabled', true);
+            $("#save-btn").hide();
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单和页面管理</title>
+    <link rel="stylesheet" th:href="@{/plugins/ztree/css/zTreeStyle/zTreeStyle.css}" type="text/css">
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <div style="text-align: right;margin-bottom: 10px; margin-right: 20px">
+            <button type="button" class="btn  btn-primary" data-toggle="modal" id="addButton">
+                <i class="fas fa-plus"></i>
+                新增
+            </button>
+            <button type="button" class="btn  btn-info" data-toggle="modal" id="editButton">
+                <i class="fas fa-edit"></i>
+                配置权限
+            </button>
+            <button type="button" class="btn  btn-danger" data-toggle="modal" id="delButton">
+                <i class="fas fa-trash-alt"></i>
+                删除
+            </button>
+        </div>
+        <table id="example2" class="table table-bordered table-hover col-sm-12">
+            <thead>
+            <tr>
+                <th style="width: 5%">序号</th>
+                <th style="width: 40%">角色名称</th>
+                <th style="width: 40%">角色描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header sidebar-dark-primary" style="color: #ffffff">
+                    <h4 class="modal-title">新增角色</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: #ffffff">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row" >
+                        <label for="roleName" class="col-sm-2 col-form-label">角色名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="roleName" placeholder="角色名称">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="roleDesc" class="col-sm-2 col-form-label">角色描述</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="roleDesc" placeholder="角色描述">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="overflow-y: auto">
+                        <label class="col-sm-2 col-form-label">权限管理</label>
+                        <div id="menuContent" class="menuContent">
+                            <ul id="treeDemo" class="ztree" style="margin-top:0; width:180px; height: 300px;"></ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="addSave">保存</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <div class="modal fade" id="modal-edit">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header sidebar-dark-primary" style="color: #ffffff">
+                    <h4 class="modal-title">编辑</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: #ffffff">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="editName" class="col-sm-2 col-form-label">角色名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="editName" placeholder="角色名称">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="editDesc" class="col-sm-2 col-form-label">角色描述</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="editDesc" placeholder="角色描述">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="overflow-y: auto">
+                        <label class="col-sm-2 col-form-label">权限管理</label>
+                        <div id="editMenuContent" class="menuContent">
+                            <ul id="tree" class="ztree" style="margin-top:0; width:180px; height: 300px;"></ul>
+                        </div>
+                    </div>
+                    <input type="hidden" class="form-control" id="roleId">
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="editSave">保存</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+
+
+</div>
+<!-- /.card-body -->
+
+
+</body>
+<script th:src="@{/plugins/select2/js/select2.full.min.js}"></script>
+<script th:src="@{/plugins/ztree/jquery.ztree.all.min.js}"></script>
+
+<script>
+    var table;
+    var setting = {
+        check: {
+            enable: true,
+            chkStyle: "checkbox",
+            chkboxType:{ "Y": "s", "N": "s" }
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        }
+    };
+
+
+    $(function () {
+        table = app.dataTables('example2', "/api/web/roles", null, false, false, [
+            {"data": 'idx'},
+            {"data": "roleName"},
+            {"data": "roleDescription"}
+        ], true);
+
+
+        /**
+         * 新增
+         */
+        //新增页面
+        $("#addButton").click(function () {
+            app.tokenGet("/api/web/html/ztree", null, function (result) {
+                $.fn.zTree.init($("#treeDemo"), setting, result);
+                $("#modal-xl").modal('toggle');
+            });
+        });
+
+
+        $("#addSave").click(function () {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+                nodes = zTree.getCheckedNodes(true);
+            var roleName = $("#roleName").val(),
+                roleDescription = $("#roleDesc").val();
+            var htmlIds = [];
+
+            nodes.forEach(function (d) {
+                htmlIds.push(d.id);
+            });
+            app.tokenPost('/api/web/roles', {
+                'roleName': roleName,
+                'roleDescription': roleDescription,
+                'htmlIds': htmlIds
+            }, function (data) {
+                Toast.success("角色新增成功");
+                table.ajax.reload();
+                $("#modal-xl").modal('toggle');
+                $.fn.zTree.destroy("treeDemo");
+                location.reload();
+            }, function (result) {
+                Toast.error(result.errorMsg);
+                $("#modal-xl").modal('toggle');
+                $.fn.zTree.destroy("treeDemo");
+            });
+        });
+
+        /**
+         * 编辑
+         * @param data
+         */
+
+        $("#editButton").click(function () {
+            var data = table.rows('.selected').data()[0];
+            if (!data) {
+                Toast.warn("请先选择一个角色");
+                return;
+            }
+            var id = data.roleId;
+            $("#roleId").val(id);
+            $("#editName").val(data.roleName);
+            $("#editDesc").val(data.roleDescription);
+            app.tokenGet("/api/web/roles/ztree", {"roleId": id}, function (result) {
+                $.fn.zTree.init($("#tree"), setting, result);
+                $("#modal-edit").modal('toggle');
+            });
+        });
+
+
+        $("#editSave").click(function () {
+            var roleId = $("#roleId").val(),
+                roleName = $("#editName").val(),
+                roleDescription = $("#editDesc").val();
+
+            var zTree = $.fn.zTree.getZTreeObj("tree"),
+                nodes = zTree.getCheckedNodes(true);
+            var htmlIds = [];
+
+            nodes.forEach(function (d) {
+                htmlIds.push(d.id);
+            });
+
+            app.tokenPut('/api/web/roles', {
+                'roleId': roleId,
+                'roleName': roleName,
+                'roleDescription': roleDescription,
+                'htmlIds': htmlIds
+            }, function (data) {
+                Toast.success("角色更新成功");
+                table.ajax.reload();
+                $("#modal-edit").modal('toggle');
+                $.fn.zTree.destroy("tree");
+            }, function (result) {
+                Toast.error(result.errorMsg);
+                $("#modal-edit").modal('toggle');
+                $.fn.zTree.destroy("tree");
+            });
+        });
+
+        /**
+         * 删除
+         */
+        $("#delButton").click(function () {
+            var row = table.rows('.selected').data()[0];
+            if (!row){
+                Toast.warn("请先选择一个角色");
+                return;
+            }
+
+            Toast.confirm("提示", "确认要删除角色" + row.roleName + "吗？", function () {
+                app.tokenDelete('/api/web/roles?roleId=' + row.roleId, null, function (data) {
+                    Toast.success("角色删除成功");
+                    table.ajax.reload();
+                }, function (result) {
+                    Toast.error(result.errorMsg);
+                    table.ajax.reload();
+                });
+            })
+
+
+        })
+
+    });
+
+
+
+
+</script>
