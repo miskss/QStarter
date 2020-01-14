@@ -1,0 +1,2 @@
+# QStarter
+基于SpringBoot快速开发的通用后台和APP服务及对应的后台管理系统
