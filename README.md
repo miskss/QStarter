@@ -3,12 +3,12 @@
 
 #### 介绍
 
-SpringBoot快速开发的通用后台和APP服务及对应的后台管理系统
+SpringBoot快速开发的通用后台和APP服务及对应的后台管理系统。采用前后端分离模式，
+接口使用基于OAuth2.0 JWT token 来授权。
 
-----
-#### 软件架构
-
-SpringBoot2.X + MySQL + SpringSecurity + Spring Data JPA + Quartz 
++ 后台服务：SpringBoot2.X + MySQL + SpringSecurity + Spring Data JPA + Quartz
++ 后台页面：[`AdminLte3.0`](https://github.com/ColorlibHQ/AdminLTE) + Thymeleaf 
++ [`oauth2.0 access_token 和 refresh_token 的使用`](/doc/token和refresh_token的使用.doc) 
 
 ---
 
