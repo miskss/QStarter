@@ -7,741 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="745b8645-d2f3-4e51-aee4-fb56f4e45464" name="Default Changelist" comment="1、first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alipay_sdk_alipay_sdk_java_3_7_4_ALL.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_hibernate5_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_binarywang_qrcode_utils_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_binarywang_weixin_java_common_3_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_binarywang_weixin_java_pay_3_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_rzymek_opczip_1_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_stephenc_jcip_jcip_annotations_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_xiaoymin_swagger_bootstrap_ui_1_8_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_28_1_jre.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_zxing_core_3_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_lang_tag_1_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_nimbus_jose_jwt_6_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_oauth2_oidc_sdk_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_tourcoo_core_0_0_1_SNAPSHOT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_38_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_38_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_38_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_38_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_38_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_38_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_jta_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_coobird_thumbnailator_0_4_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_59.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_60.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_59.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_60.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dhatim_fastexcel_0_10_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_4_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_3_10_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_17_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_23_2_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jodd_jodd_core_3_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jodd_jodd_http_3_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jodd_jodd_upload_3_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_oauth2_client_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_oauth2_resource_server_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_quartz_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_1_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_oauth_spring_security_oauth2_2_3_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_jwt_1_0_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_client_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_core_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_jose_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_resource_server_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_core_2_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_data_redis_2_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/admin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/annotations/MessageLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/aop/MessageLogAop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/aop/SmsAop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/config/ExcludeSessionRepositoryFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/config/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/config/LogAndSuppressRequestRejectedExceptionFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/config/ProjectConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/config/SimpleCORSFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/config/SpringHttpSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/constant/ArgumentsValidConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/constant/HttpSessionAttrKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/AppUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/AppVersionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/FileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/LogMessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/ManageUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/ResourcesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/SystemHtmlController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/WebUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/page/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/page/MenuPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/page/ResourcePageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/page/SmsLogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/controller/page/VipUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/entity/LogMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/entity/WebUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/enums/LogActionTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/enums/LogType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/event/DefaultLogMessageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/event/LogHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/event/LoginLogHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/event/MessageLogHandleEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/event/MessageLogHandleEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/event/PublishCenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/AddRoleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/AddUserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/ChangePasswordDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/ForgetPasswordDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/LoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/ModifySysHtmlDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/ResourceDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/ResourceUpdateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/SmsLoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/SysHtmlDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/UpdateRoleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/UpdateUserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/dto/UpdateUserInfoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/HasHtmlTreeVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/HtmlTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/LoginResultVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/MessageLogVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/ResourceVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/RoleDetailVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/RoleVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/RoleZTreePageVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/SysHtmlDetailVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/SystemHtmlItemVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/WebLoginVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/WebUserListItemVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/WebUserVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/model/vo/ZTreePageVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/repository/LogMessageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/repository/WebUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/service/LogMessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/service/SystemHtmlResourceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/service/SystemHtmlService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/service/ThymeleafService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/service/WebLoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/service/WebUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/qstarter/admin/service/resources/ResourceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/application-local.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/application-pro.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/css/util.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/css/app.47617d28.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/css/app.a6708675.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/css/app.b0cf5648.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/css/app.d80189a3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/img/download.81261dbb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/img/func_4.4d06b1d8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/img/func_5.eccaba67.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/img/func_6.e26a2871.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/img/func_7.0b160b92.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/img/share_4.114f8717.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/img/share_6.b5cfc76d.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/img/share_7.6937cec2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/js/app.409fad19.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/js/app.533c6d1e.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/js/app.bf694565.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/js/app.c3e5687b.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/js/chunk-vendors.5aab21c8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/download/js/chunk-vendors.a83101e4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/AdminLTELogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/avatar5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/img-01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/task/at.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/task/bp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/task/ds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/task/dw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/task/if.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/task/rc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/task/ts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/task/ub.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/task/wx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/img/task/zx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/js/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/js/Toast.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/js/checkStatus.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/adminlte.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.components.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.components.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.components.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.components.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.core.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.core.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.core.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.core.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.extra-components.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.extra-components.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.extra-components.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.extra-components.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.pages.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.pages.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.pages.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.pages.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.plugins.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.plugins.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.plugins.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/css/alt/adminlte.plugins.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/admin-lte/js/adminlte.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-slider/bootstrap-slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-slider/bootstrap-slider.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-slider/css/bootstrap-slider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-slider/css/bootstrap-slider.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-switch/css/bootstrap2/bootstrap-switch.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-switch/css/bootstrap2/bootstrap-switch.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-switch/js/bootstrap-switch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap-switch/js/bootstrap-switch.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/datarangepicker/daterangepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/datarangepicker/daterangepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/datarangepicker/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/datatables-bs4/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/datatables-bs4/js/dataTables.bootstrap4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/datatables/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/datatables/jquery.dataTables.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/datatables/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/dropzone/dropzone.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/dropzone/dropzone.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/echarts/echarts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/echarts/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ekko-lightbox/ekko-lightbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ekko-lightbox/ekko-lightbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ekko-lightbox/ekko-lightbox.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ekko-lightbox/ekko-lightbox.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ekko-lightbox/ekko-lightbox.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/brands.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/brands.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/fontawesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/fontawesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/regular.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/regular.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/solid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/solid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/svg-with-js.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/svg-with-js.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/v4-shims.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/css/v4-shims.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/icheck-bootstrap/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/icheck-bootstrap/icheck-bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/icheck-bootstrap/icheck-bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ionicons/css/ionicons.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ionicons/fonts/ionicons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/jquery-mousewheel/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/jquery-mousewheel/jquery.mousewheel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/jquery/core.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/jquery/jquery.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/jquery/jquery.slim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/jquery/jquery.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/jquery/jquery.slim.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/overlayScrollbars/css/OverlayScrollbars.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/overlayScrollbars/js/OverlayScrollbars.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/overlayScrollbars/js/OverlayScrollbars.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/css/select2-bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/css/select2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/css/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/af.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/ar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/az.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/bn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/bs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/build.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/cs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/da.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/de.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/dsb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/el.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/et.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/eu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/fa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/fi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/gl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/he.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/hi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/hr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/hsb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/hu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/hy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/id.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/is.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/ka.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/km.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/ko.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/lt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/lv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/mk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/ms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/nb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/ne.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/nl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/ps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/pt-BR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/ro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/sk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/sl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/sq.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/sr-Cyrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/sr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/sv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/th.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/tk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/uk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/vi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/zh-CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/i18n/zh-TW.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/select2.full.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/select2.full.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/select2/js/select2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/font/summernote.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/font/summernote.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/font/summernote.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/lang/summernote-zh-CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/lang/summernote-zh-CN.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote-bs4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote-bs4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote-bs4.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote-bs4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote-lite.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote-lite.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote-lite.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote-lite.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/summernote/summernote.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/sweetalert2/sweetalert2.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/sweetalert2/sweetalert2.all.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/sweetalert2/sweetalert2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/sweetalert2/sweetalert2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/sweetalert2/sweetalert2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/sweetalert2/sweetalert2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/switchery/switchery.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/switchery/switchery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/switchery/switchery.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/switchery/switchery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/tilt/tilt.jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/viewerjs/viewer.common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/viewerjs/viewer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/viewerjs/viewer.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/viewerjs/viewer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/viewerjs/viewer.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/viewerjs/viewer.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/awesomeStyle/awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/awesomeStyle/awesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/awesomeStyle/fa.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/awesomeStyle/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/metroStyle/img/line_conn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/metroStyle/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/metroStyle/img/metro.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/metroStyle/img/metro.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/metroStyle/metroStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/diy/1_close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/diy/1_open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/diy/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/diy/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/diy/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/diy/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/diy/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/diy/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/diy/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/diy/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/line_conn.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/zTreeStandard.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/img/zTreeStandard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/css/zTreeStyle/zTreeStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/static/plugins/ztree/jquery.ztree.all.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/fragments/common.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/pages/log/sys-log.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/pages/menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/pages/operation/app-version.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/pages/resource.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/pages/role.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/pages/statistic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/pages/users.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/pages/white-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/white.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/test/java/com/qstarter/admin/service/WebLoginServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/test/java/com/qstarter/app/repository/AppUserRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/test/java/com/qstarter/core/thirdly_service/weixin/WxLoginServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/test/java/com/qstarter/security/service/AccountServiceTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/admin/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/admin/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/controller/AppFileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/controller/AppUserInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/controller/AppUserLoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/controller/AppUserPasswordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/controller/AppVersionDownloadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/entity/AppUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/entity/AppVersion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/enums/GoldRecordTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/enums/QuestionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/enums/TextContentEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/enums/TransferTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/enums/WithdrawStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/event/AppUserBindPhoneNumberEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/event/AppUserBindWXEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/event/AppUserEventCenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/event/AppUserRegisterEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/dto/AppChangePasswordDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/dto/AppUserRegisterDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/dto/AppVersionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/dto/LoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/dto/PhoneNumberDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/dto/SetPasswordDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/dto/SmsLoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/vo/AppUserVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/vo/AppVersionVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/model/vo/SmsAccessToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/quartz/job/QuartzJobDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/repository/AppUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/repository/AppVersionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/service/AppUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/service/AppVersionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/utils/FormatStringUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/qstarter/app/utils/UrlUtils.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/config/AsyncEventConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/config/FileProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/config/ScheduledTaskConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/config/ScheduledThreadPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/config/SmsInterceptorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/constant/CacheName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/constant/CommonArgumentsValidConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/constant/Constant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/constant/JobKeyConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/constant/RedisKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/enums/ConvertEnumFromVal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/enums/DeviceTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/enums/ErrorMessageEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/enums/GenderEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/enums/convert2db/AbstractEnumConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/enums/convert2db/PersistEnum2DB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/event/AppUserLoginEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/event/BaseEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/event/DeleteFileEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/event/PublishEventCenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/event/SmsSendResultEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/exceptions/SystemServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/model/AccessToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/model/GenericErrorMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/model/GenericMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/model/SmsSendResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/service/FileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/payment/AliPay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/payment/PayChannel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/payment/PayConfigConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/payment/PayNotifyCallBackHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/payment/PayType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/payment/WxPay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/payment/controller/PayNotifyCallBackController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/payment/ex/PayCallbackHandlerFailException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/payment/ex/PayServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/payment/vo/PayChannelVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/sms/DefaultSmsSendService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/sms/SmsCodeSendService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/sms/SmsSendSevice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/sms/SmsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/sms/SmsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/weixin/ErrorMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/weixin/WeiXinLoginConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/weixin/WxAccessToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/weixin/WxLoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/thirdly_service/weixin/WxUserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/CollectionUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/CommonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/EnumUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/ExcelUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/FileUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/HttpUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/IdWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/InviteCodeUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/PageView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/PasswordEncoderUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/RemoteIpHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/TimeUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/XmlUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/excel/DateFormatHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/excel/ExcelCellValueHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/excel/ExcelColumn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/qstarter/core/utils/redis/RedisUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/qstarter/core/utils/FileUtilsTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/token和refresh_token的使用.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qstarter.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/security.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/common/SystemUserFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/common/SystemUserNameDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/common/SystemUserNameEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/common/SystemUserNameSuffix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/config/AdminPermissionEvaluator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/config/AuthorizationServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/config/MethodSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/config/ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/config/SystemSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/config/SystemWebResponseExceptionTranslator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/entity/SystemHtml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/entity/SystemResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/entity/SystemRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/entity/SystemUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/enums/HtmlType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/enums/OperationEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/enums/ResourceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/enums/RoleInSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/exception/UnAuthorizationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/granter/IdAuthenticationProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/granter/IdAuthenticationToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/granter/IdTokenGranter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/model/UserDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/repository/SystemHtmlRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/repository/SystemResourcesRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/repository/SystemRoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/repository/SystemUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/service/ResourcePool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/service/RolePool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/service/SystemResourcesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/service/SystemRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/service/SystemUserDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/service/TokenManageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security/src/main/java/com/qstarter/security/utils/ContextHolder.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/security/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/security/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/boot-template.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/quartz_sql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -779,15 +53,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/qstarter/core/config/AsyncEventConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/com/qstarter/core/event/SmsSendResultEvent.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -845,8 +110,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="10" selection-start-column="10" selection-end-column="10" />
+              <first_editor relative-caret-position="336">
+                <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
               </first_editor>
               <second_editor />
             </state>
@@ -1044,6 +309,11 @@
             <path>
               <item name="QStarter" type="b2602c69:ProjectViewProjectNode" />
               <item name="QStarter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QStarter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QStarter" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1363,7 +633,7 @@
       <workItem from="1578900273141" duration="485000" />
       <workItem from="1578900780441" duration="3361000" />
       <workItem from="1578962277229" duration="11861000" />
-      <workItem from="1578982369711" duration="51000" />
+      <workItem from="1578982369711" duration="1514000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1569738101933</created>
@@ -1484,7 +754,21 @@
       <option name="project" value="LOCAL" />
       <updated>1577684784848</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="1、first commit">
+      <created>1578982537808</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1578982537808</updated>
+    </task>
+    <task id="LOCAL-00019" summary="1、更新Readme">
+      <created>1578983738487</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1578983738487</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1520,7 +804,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1263803000" />
+    <option name="totallyTimeSpent" value="1265266000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1535,7 +819,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6345566" visible="true" weight="0.25586355" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6345566" visible="true" weight="0.25586355" />
       <window_info id="Structure" order="1" sideWeight="0.124076806" side_tool="true" weight="0.21481876" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.36544344" side_tool="true" weight="0.23240939" />
@@ -1553,13 +837,13 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4989339" weight="0.18980478" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4989339" visible="true" weight="0.14967462" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989339" weight="0.2462039" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010661" side_tool="true" weight="0.18980478" />
       <window_info anchor="bottom" id="SonarLint" order="12" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.7420043" weight="0.6583514" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.7420043" weight="0.23427331" />
       <window_info anchor="bottom" id="JRebel Console" order="16" sideWeight="0.43869936" side_tool="true" weight="0.21366595" />
       <window_info anchor="bottom" id="JRebel Executor" order="17" weight="0.46637744" />
       <window_info anchor="bottom" id="Problems" order="18" weight="0.329718" />
@@ -1642,7 +926,8 @@
     <MESSAGE value="1、后台管理系统功能已完成" />
     <MESSAGE value="1、bug基本修复" />
     <MESSAGE value="1、first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、first commit" />
+    <MESSAGE value="1、更新Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、更新Readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1749,7 +1034,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/static/img/img-02.png" />
     <entry file="file://$PROJECT_DIR$/admin/src/main/resources/static/img/img-01.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -2107,11 +1391,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.en.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="168">
+            <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="10" selection-start-column="10" selection-end-column="10" />
+          <first_editor relative-caret-position="336">
+            <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
           </first_editor>
           <second_editor />
         </state>

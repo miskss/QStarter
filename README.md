@@ -14,6 +14,9 @@ SpringBoot快速开发的通用后台和APP服务及对应的后台管理系统�
 
 #### 安装教程
 
+后台管理系统页面，在线演示：[`http://122.51.217.213:8080`](http://122.51.217.213:8080)  用户名 `adminsuperme` 密码 `123456`
+
+
 1. mvn clean package -Dmaven.test.skip=true
 
 2. 执行sql 文件夹下的  [`boot-template.sql`](/sql/boot-template.sql) 和 [`quartz_sql.sql`](/sql/quartz_sql.sql)
