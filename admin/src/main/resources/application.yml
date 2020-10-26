@@ -3,10 +3,18 @@ spring:
     active: pro
   thymeleaf:
     cache: true
+  ## 静态资源的浏览器缓存设置
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
   jpa:
     open-in-view: false
   session:
     store-type: redis
+    timeout: 7200
   data:
     redis:
       repositories:
