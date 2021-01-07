@@ -7,7 +7,7 @@ package com.qstarter.core.constant;
 public interface CommonArgumentsValidConstant {
 
     String PHONE_REGX = "^[1][0-9]{10}$";
-
+    String ALL_NUMBER_REGX = "^[0-9]*$";
     String PHONE_MESSAGE = "手机号不正确";
     String PHONE_NOT_EMPTY = "手机号不能为空";
 

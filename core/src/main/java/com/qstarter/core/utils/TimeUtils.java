@@ -226,6 +226,11 @@ public final class TimeUtils {
         return LocalDate.parse(date, pattern);
     }
 
+    public static LocalDate parseLocalDate(String date, String pattern) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
+        return LocalDate.parse(date, dateTimeFormatter);
+    }
+
     /**
      * 格式化时间 方法
      */
