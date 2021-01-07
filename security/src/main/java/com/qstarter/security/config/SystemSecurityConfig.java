@@ -49,6 +49,7 @@ public class SystemSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .sessionFixation().none()
                 .and()
                 .httpBasic()
                 .realmName(SECURITY_REALM)
