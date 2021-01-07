@@ -4,10 +4,13 @@ import com.google.common.base.Strings;
 import com.qstarter.core.constant.RedisKey;
 import lombok.Data;
 import org.springframework.data.redis.core.*;
+import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import javax.annotation.PostConstruct;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -143,9 +146,7 @@ public class RedisUtils {
     }
 
     public static long removeSetElement(String key, Object value) {
-
         validKey(key);
-
         Long remove = setOperations.remove(getKey(key), value);
         if (remove == null) throw new IllegalArgumentException("redis set remove failure");
         return remove;
@@ -220,6 +221,37 @@ public class RedisUtils {
         Set<Object> members = setOperations.members(getKey(key));
         return members == null ? new HashSet<>() : members;
     }
+
+    /**
+     * 加锁操作
+     *
+     * @param key     key
+     * @param timeout 超时时间，防止意外导致死锁
+     * @return 加锁成功返回 lockValue 加锁使用的值（解锁时用到{@link #unlock(String, String)}），加锁失败 返回 null
+     */
+    public static String lock(String key, Duration timeout) {
+        long current = Instant.now().toEpochMilli() + timeout.toMillis();
+        Boolean aBoolean = RedisUtils.valueOperations.setIfAbsent(RedisKey.LOCK + key, String.valueOf(current), timeout);
+        if (aBoolean != null && aBoolean) {
+            return String.valueOf(current);
+        } else {
+            return null;
+        }
+    }
+
+    public static Boolean unlock(String key, String lockValue) {
+        String luaScript =
+                "local curr = redis.call('get', KEYS[1]); " +
+                        "if (curr == ARGV[1]) then  " +
+                        "redis.call('del', KEYS[1]); " +
+                        "return true;" +
+                        "else  " +
+                        "return (curr == ARGV[1]);" +
+                        "end; ";
+        RedisScript<Boolean> redisScript = RedisScript.of(luaScript, Boolean.class);
+        return innerTemplate.execute(redisScript, Collections.singletonList(RedisKey.LOCK + key), lockValue);
+    }
+
 
     private static String getKey(String key) {
         return RedisKey.PREFIX_KEY + key;

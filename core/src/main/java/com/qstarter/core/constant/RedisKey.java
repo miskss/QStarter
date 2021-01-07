@@ -5,7 +5,10 @@ package com.qstarter.core.constant;
  * create: 2019-06-05 09:08
  **/
 public interface RedisKey {
-
+    /**
+     * redis 锁的前缀
+     */
+    String LOCK = "qs:lock:";
     /**
      * 全局数据存储的key前缀
      */
