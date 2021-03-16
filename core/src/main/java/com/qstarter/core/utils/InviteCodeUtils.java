@@ -1,6 +1,8 @@
 package com.qstarter.core.utils;
 
+import java.util.HashSet;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * 邀请码生成器，基本原理：<br/>
@@ -106,8 +108,16 @@ public class InviteCodeUtils {
     }
 
     public static void main(String[] args) {
+        HashSet<String> set = new HashSet<>();
 
-        System.out.println(codeToId(""));
+
+        for (int i = 0; i < 1000000; i++) {
+            set.add(idToCode((long) i));
+        }
+        System.out.println(set.size());
+
+
+        System.out.println((int) set.stream().map(InviteCodeUtils::codeToId).count());
 
 
     }
