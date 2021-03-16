@@ -108,7 +108,7 @@ public final class ExcelUtils {
                             log.error(e.getMessage(), e);
                         }
                         if (valueHandler != null) {
-                            ws.value(currentRow, columnIdx, valueHandler.handle(value));
+                            ws.value(currentRow, columnIdx, valueHandler.writeCell(value));
                         } else {
                             ws.value(currentRow, columnIdx, value);
                         }
