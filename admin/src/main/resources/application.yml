@@ -21,8 +21,8 @@ spring:
         enabled: false
 project:
   project-name: temp-boot
-  develop-name: 南京途酷科技有限公司
-  develop-url: http://www.tklvyou.cn
+  develop-name:
+  develop-url: http://www.miskss.com
   version: 1.0.0
 server:
   port: 8088

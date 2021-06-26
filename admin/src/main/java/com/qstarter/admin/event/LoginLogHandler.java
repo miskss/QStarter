@@ -21,7 +21,7 @@ public class LoginLogHandler implements LogHandler {
 
         LoginDTO dto = (LoginDTO) args[0];
         String username = dto.getUsername();
-        String localAddr = RemoteIpHelper.getClientIpAddress(data.getRequest());
+        String localAddr = data.getRequestIp();
         MessageLog messageLog = data.getMessageLog();
         LogActionTypeEnum action = messageLog.action();
         String title = messageLog.value();

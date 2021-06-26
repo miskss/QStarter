@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 public class PublishCenter {
 
 
-    public static void publishMessageLogHandleEvent(Object[] args, MessageLog messageLog, Object result, HttpServletRequest request,Long webUserId){
+    public static void publishMessageLogHandleEvent(Object[] args, MessageLog messageLog, Object result, String requestIp,Long webUserId){
 
-        MessageLogHandleEvent.Data data = new MessageLogHandleEvent.Data(args, messageLog, result, request,webUserId);
+        MessageLogHandleEvent.Data data = new MessageLogHandleEvent.Data(args, messageLog, result, requestIp,webUserId);
 
         PublishEventCenter.getPublisher().publishEvent(new MessageLogHandleEvent(data));
 

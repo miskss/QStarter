@@ -7,6 +7,7 @@ import com.qstarter.core.model.GenericErrorMessage;
 import com.qstarter.security.config.SystemWebResponseExceptionTranslator;
 import com.qstarter.security.exception.UnAuthorizationException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
@@ -33,6 +35,12 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
+
+    private final Environment env;
+
+    public GlobalExceptionHandler(Environment env) {
+        this.env = env;
+    }
 
     @ExceptionHandler({SystemServiceException.class,
             ConstraintViolationException.class,
@@ -70,7 +78,10 @@ public class GlobalExceptionHandler {
             fail = GenericMsg.fail(ErrorMessageEnum.HTTP_MEDIA_TYPE_NOT_SUPPORTED_EXCEPTION);
 
         } else if (ex instanceof HttpMessageNotReadableException) {
-            fail = GenericMsg.fail(ErrorMessageEnum.METHOD_ARGUMENT_NOT_VALID_EXCEPTION, "未收到参数");
+            fail = GenericMsg.fail(ErrorMessageEnum.METHOD_ARGUMENT_NOT_VALID_EXCEPTION, "未收到参数或参数类型错误。" + ((HttpMessageNotReadableException) ex).getMessage());
+        } else if (ex instanceof MaxUploadSizeExceededException) {
+            String property = env.getProperty("spring.servlet.multipart.max-request-size");
+            fail = GenericMsg.fail(ErrorMessageEnum.FILE_SIZE_OVERSIZE, "上传的文件过大，最大只能上传：" + property + "文件");
         } else {
             log.error(ex.getMessage(), ex);
             fail = GenericMsg.fail(ErrorMessageEnum.SYSTEM_UNKNOWN_ERROR);

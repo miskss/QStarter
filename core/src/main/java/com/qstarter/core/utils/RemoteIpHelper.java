@@ -20,6 +20,11 @@ public class RemoteIpHelper {
             String split = ",";
             return remoteAddr.contains(split) ? remoteAddr.split(split)[0] : remoteAddr;
         }
+        String realIp = request.getHeader("X-REAL-IP");
+        if (!Strings.isNullOrEmpty(realIp)) {
+            String split = ",";
+            return realIp.contains(split) ? remoteAddr.split(split)[0] : remoteAddr;
+        }
         String ip = request.getRemoteAddr();
 
         if (Objects.equals(ip, "0:0:0:0:0:0:0:1")) {

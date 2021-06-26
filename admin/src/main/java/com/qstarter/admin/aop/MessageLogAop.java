@@ -2,6 +2,7 @@ package com.qstarter.admin.aop;
 
 import com.qstarter.admin.annotations.MessageLog;
 import com.qstarter.admin.event.PublishCenter;
+import com.qstarter.core.utils.RemoteIpHelper;
 import com.qstarter.security.utils.ContextHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -37,7 +38,7 @@ public class MessageLogAop {
 
         Object result = joinPoint.proceed();
 
-        PublishCenter.publishMessageLogHandleEvent(args,annotation,result, ContextHolder.getRequest(),ContextHolder.getUserIdOrNull());
+        PublishCenter.publishMessageLogHandleEvent(args,annotation,result, RemoteIpHelper.getClientIpAddress(ContextHolder.getRequest()),ContextHolder.getUserIdOrNull());
         return result;
     }
 }

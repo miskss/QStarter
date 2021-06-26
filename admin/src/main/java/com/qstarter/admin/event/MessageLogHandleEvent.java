@@ -31,16 +31,16 @@ public class MessageLogHandleEvent extends BaseEvent<MessageLogHandleEvent.Data>
 
         private Object result;
 
-        private HttpServletRequest request;
+        private String requestIp;
 
         private Long webUserId;
 
 
-        public Data(Object[] args, MessageLog messageLog, Object result, HttpServletRequest request, Long webUserId) {
+        public Data(Object[] args, MessageLog messageLog, Object result, String requestIp, Long webUserId) {
             this.args = args;
             this.messageLog = messageLog;
             this.result = result;
-            this.request = request;
+            this.requestIp = requestIp;
             this.webUserId = webUserId;
         }
     }

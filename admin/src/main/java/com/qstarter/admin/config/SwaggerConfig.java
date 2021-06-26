@@ -34,7 +34,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("步步赚 平台 文档")
+                .title("平台 文档")
                 .description("Api文档")
                 .termsOfServiceUrl("http://192.168.1.222:8080/api")
                 .contact(new Contact("", "http://192.168.1.222:8080/api", ""))
