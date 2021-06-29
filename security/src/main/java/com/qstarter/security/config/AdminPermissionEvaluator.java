@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 @Component
 public class AdminPermissionEvaluator implements PermissionEvaluator {
 
-    private AntPathMatcher antPathMatcher = new AntPathMatcher();
+    private final AntPathMatcher antPathMatcher = new AntPathMatcher();
 
     @Override
     public boolean hasPermission(Authentication authentication, Object targetDomainObject, Object permission) {

@@ -26,8 +26,8 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-    private ResourceServerTokenServices tokenServices;
-    private FileProperties fileProperties;
+    private final ResourceServerTokenServices tokenServices;
+    private final FileProperties fileProperties;
 
     public ResourceServerConfig(ResourceServerTokenServices tokenServices, FileProperties fileProperties) {
         this.tokenServices = tokenServices;

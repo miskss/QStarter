@@ -32,16 +32,16 @@ import java.util.List;
 @EnableAuthorizationServer
 @ComponentScan(basePackages = "com.*")
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
-    private TokenStore tokenStore;
+    private final TokenStore tokenStore;
 
-    private JwtAccessTokenConverter accessTokenConverter;
+    private final JwtAccessTokenConverter accessTokenConverter;
 
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
 
-    private UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
 
-    private DataSource dataSource;
-    private SystemUserDetailService service;
+    private final DataSource dataSource;
+    private final SystemUserDetailService service;
 
     public AuthorizationServerConfig(TokenStore tokenStore, JwtAccessTokenConverter accessTokenConverter, AuthenticationManager authenticationManager, UserDetailsService userDetailsService, DataSource dataSource, SystemUserDetailService service) {
         this.tokenStore = tokenStore;

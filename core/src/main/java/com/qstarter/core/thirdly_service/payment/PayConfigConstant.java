@@ -7,14 +7,11 @@ package com.qstarter.core.thirdly_service.payment;
  */
 public interface PayConfigConstant {
 
-    //TODO:
 
-//        String HOST = "https://tourcoo.xiaomiqiu.com";
     String HOST = "http://47.104.168.189:8080/iov";//正式环境
-//    String HOST = "http://119.3.20.53:8090/iov";//测试环境
 
 
-    String BODY = "亿车聪-服务订单";
+    String BODY = "服务订单";
 
     interface WXConfig {
         /**

@@ -57,7 +57,6 @@ public class ScheduledThreadPool {
                         executor.shutdownNow();
                         scheduler.shutdownNow();
                     }
-
                     log.info("线程池 shutdown complete.");
                 }
             }));

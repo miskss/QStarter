@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class FileService {
 
-    private FileProperties fileProperties;
+    private final FileProperties fileProperties;
     private static final String APK_TYPE = ".apk";
     private static final long MAX_SIZE = 100 * 1024 * 1024;
 

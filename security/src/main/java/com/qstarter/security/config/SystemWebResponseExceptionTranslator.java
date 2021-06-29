@@ -23,7 +23,7 @@ import java.io.IOException;
  **/
 @Slf4j
 public class SystemWebResponseExceptionTranslator implements WebResponseExceptionTranslator<GenericErrorMessage> {
-    private ThrowableAnalyzer throwableAnalyzer = new DefaultThrowableAnalyzer();
+    private final ThrowableAnalyzer throwableAnalyzer = new DefaultThrowableAnalyzer();
 
     @Override
     public ResponseEntity<GenericErrorMessage> translate(Exception e) throws Exception {

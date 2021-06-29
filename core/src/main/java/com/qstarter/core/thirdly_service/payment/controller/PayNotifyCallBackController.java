@@ -38,7 +38,7 @@ public class PayNotifyCallBackController {
     private static final String FAIL = "fail";
     private static final String SUCCESS = "success";
 
-    private PayNotifyCallBackHandler handler;
+    private final PayNotifyCallBackHandler handler;
     public PayNotifyCallBackController(PayNotifyCallBackHandler handler) {
         this.handler = handler;
     }

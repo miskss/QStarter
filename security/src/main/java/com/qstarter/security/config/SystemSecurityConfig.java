@@ -25,7 +25,7 @@ public class SystemSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String SECURITY_REALM = "Walk Make Money";
     private static final String SIGNING_KEY = "MaYzkSmkzZPC57L";
-    private RedisConnectionFactory redisConnectionFactory;
+    private final RedisConnectionFactory redisConnectionFactory;
 
     public SystemSecurityConfig(RedisConnectionFactory redisConnectionFactory) {
         this.redisConnectionFactory = redisConnectionFactory;

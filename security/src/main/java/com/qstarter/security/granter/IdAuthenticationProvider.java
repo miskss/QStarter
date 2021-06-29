@@ -16,7 +16,7 @@ import java.util.Objects;
  **/
 public class IdAuthenticationProvider implements AuthenticationProvider {
 
-    private SystemUserDetailService service;
+    private final SystemUserDetailService service;
 
 
     public IdAuthenticationProvider(SystemUserDetailService service) {
