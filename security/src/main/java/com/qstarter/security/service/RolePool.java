@@ -30,7 +30,7 @@ public class RolePool implements ApplicationListener<ApplicationReadyEvent> {
      */
     private final static ConcurrentHashMap<String, Set<Long>> ROLE_POOL = new ConcurrentHashMap<>();
 
-    private SystemRoleRepository roleRepository;
+    private final SystemRoleRepository roleRepository;
 
     public RolePool(SystemRoleRepository roleRepository) {
         this.roleRepository = roleRepository;

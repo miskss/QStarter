@@ -22,7 +22,7 @@ import java.util.List;
 @Service
 public class SystemUserDetailService implements UserDetailsService {
 
-    private SystemUserRepository repository;
+    private final SystemUserRepository repository;
 
     public SystemUserDetailService(SystemUserRepository repository) {
         this.repository = repository;

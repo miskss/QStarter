@@ -20,7 +20,7 @@ public class ResourcePool {
 
     private static final ConcurrentHashMap<Long, SystemResource> RESOURCES = new ConcurrentHashMap<>(32);
 
-    private SystemResourcesRepository repository;
+    private final SystemResourcesRepository repository;
 
     public ResourcePool(SystemResourcesRepository repository) {
         this.repository = repository;

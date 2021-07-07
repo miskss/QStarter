@@ -25,9 +25,9 @@ import java.util.stream.Collectors;
 public class SystemRoleService {
 
 
-    private SystemRoleRepository roleRepository;
-    private SystemResourcesRepository resourcesRepository;
-    private SystemHtmlRepository systemHtmlRepository;
+    private final SystemRoleRepository roleRepository;
+    private final SystemResourcesRepository resourcesRepository;
+    private final SystemHtmlRepository systemHtmlRepository;
 
     public SystemRoleService(SystemRoleRepository roleRepository, SystemResourcesRepository resourcesRepository, SystemHtmlRepository systemHtmlRepository) {
         this.roleRepository = roleRepository;

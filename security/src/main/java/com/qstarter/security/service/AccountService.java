@@ -58,12 +58,13 @@ public class AccountService {
     private static final String PASSWORD = "password";
     private static final String USER_ID = "user_id";
     private static final String LOCAL_SERVER_PORT = "local.server.port";
+    private static final String LOCAL_SERVER_CONTEXT_PATH = "server.servlet.context-path";
 
-    private SystemUserRepository repository;
+    private final SystemUserRepository repository;
 
-    private Environment environment;
+    private final Environment environment;
 
-    private TokenManageService tokenManageService;
+    private final TokenManageService tokenManageService;
 
 
     public AccountService(SystemUserRepository repository, Environment environment, TokenManageService tokenManageService) {
@@ -294,7 +295,8 @@ public class AccountService {
 
     private URI getUri() {
         String port = environment.getProperty(LOCAL_SERVER_PORT);
-        String url = LOCALHOST + port + OAUTH_TOKEN;
+        String contextPath = environment.getProperty(LOCAL_SERVER_CONTEXT_PATH);
+        String url = LOCALHOST + port + contextPath + OAUTH_TOKEN;
         try {
             return new URI(url);
         } catch (URISyntaxException e) {

@@ -18,7 +18,7 @@ import java.util.Collection;
 @Transactional
 public class SystemResourcesService {
 
-    private SystemResourcesRepository repository;
+    private final SystemResourcesRepository repository;
 
     public SystemResourcesService(SystemResourcesRepository repository) {
         this.repository = repository;

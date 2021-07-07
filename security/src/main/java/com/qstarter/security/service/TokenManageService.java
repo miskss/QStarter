@@ -15,8 +15,8 @@ import java.util.Collection;
 @Service
 public class TokenManageService {
 
-    private TokenStore tokenStore;
-    private SystemUserRepository userRepository;
+    private final TokenStore tokenStore;
+    private final SystemUserRepository userRepository;
 
     public TokenManageService(TokenStore tokenStore, SystemUserRepository userRepository) {
         this.tokenStore = tokenStore;
