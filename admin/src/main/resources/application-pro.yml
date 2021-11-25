@@ -25,8 +25,8 @@ spring:
     timeout: 1000
     lettuce:
       pool:
-        max-active: 200
-        max-idle: 200
+        max-active: 20
+        max-idle: 2
         max-wait: 1000
   cache:
     redis:

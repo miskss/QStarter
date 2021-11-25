@@ -4,9 +4,9 @@ import com.qstarter.core.enums.ErrorMessageEnum;
 import com.qstarter.core.exceptions.SystemServiceException;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 import static com.qstarter.core.constant.CommonArgumentsValidConstant.*;
@@ -20,15 +20,15 @@ import static com.qstarter.core.constant.CommonArgumentsValidConstant.*;
 public class ChangePasswordDTO {
 
     @NotBlank(message = "原密码不能为空")
-    @Length(min = PASSWORD_LENGTH_MIN, max = PASSWORD_LENGTH_MAX, message = PASSWORD_VALID_MESSAGE)
+    @Size(min = PASSWORD_LENGTH_MIN, max = PASSWORD_LENGTH_MAX, message = PASSWORD_VALID_MESSAGE)
     private String oldPassword;
 
     @NotBlank(message = "密码不能为空")
-    @Length(min = PASSWORD_LENGTH_MIN, max = PASSWORD_LENGTH_MAX, message = PASSWORD_VALID_MESSAGE)
+    @Size(min = PASSWORD_LENGTH_MIN, max = PASSWORD_LENGTH_MAX, message = PASSWORD_VALID_MESSAGE)
     private String newPassword;
 
     @NotBlank(message = "确认密码不能为空")
-    @Length(min = PASSWORD_LENGTH_MIN, max = PASSWORD_LENGTH_MAX, message = PASSWORD_VALID_MESSAGE)
+    @Size(min = PASSWORD_LENGTH_MIN, max = PASSWORD_LENGTH_MAX, message = PASSWORD_VALID_MESSAGE)
     private String confirmPassword;
 
 

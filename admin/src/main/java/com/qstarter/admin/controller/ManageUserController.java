@@ -10,13 +10,13 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import org.hibernate.validator.constraints.Range;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * @author peter
@@ -41,7 +41,7 @@ public class ManageUserController {
             @ApiImplicitParam(name = "pageSize", value = "每页数据条数，最多50条")
     })
     public GenericMsg<PageView<WebUserListItemVO>> get(@RequestParam(defaultValue = "0") Integer pageIndex,
-                                                       @RequestParam(defaultValue = "10") @Range(min = 1, max = 50, message = "每页多只能有50条,最少1条") Integer pageSize) {
+                                                       @RequestParam(defaultValue = "10") @Size(min = 1, max = 50, message = "每页多只能有50条,最少1条") Integer pageSize) {
         PageView<WebUserListItemVO> list = webUserService.list(pageIndex, pageSize);
         return GenericMsg.success(list);
     }

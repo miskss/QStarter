@@ -8,7 +8,6 @@ import com.qstarter.core.enums.ErrorMessageEnum;
 import com.qstarter.core.exceptions.SystemServiceException;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -27,7 +26,7 @@ public class UpdateUserDTO {
     private Long userId;
 
     @NotBlank(message = "用户名不能为空")
-    @Length(min = ArgumentsValidConstant.USERNAME_LENGTH_MIN, max = ArgumentsValidConstant.USERNAME_LENGTH_MAX, message = ArgumentsValidConstant.USERNAME_VALID_MESSAGE)
+    @Size(min = ArgumentsValidConstant.USERNAME_LENGTH_MIN, max = ArgumentsValidConstant.USERNAME_LENGTH_MAX, message = ArgumentsValidConstant.USERNAME_VALID_MESSAGE)
     private String username;
 
     @NotBlank(message = "用户手机号不能为空")

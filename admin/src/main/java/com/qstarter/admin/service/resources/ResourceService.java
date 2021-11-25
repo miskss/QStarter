@@ -57,7 +57,7 @@ public class ResourceService {
     }
 
     public PageView<ResourceVO> list(Integer pageIndex, Integer pageSize) {
-        Page<SystemResource> page = systemResourcesService.findAllByPage(PageRequest.of(pageIndex, pageSize, new Sort(Sort.Direction.DESC, "createTime")));
+        Page<SystemResource> page = systemResourcesService.findAllByPage(PageRequest.of(pageIndex, pageSize,  Sort.by(Sort.Direction.DESC, "createTime")));
         return PageView.fromPage(page, ResourceVO::fromEntity);
     }
 

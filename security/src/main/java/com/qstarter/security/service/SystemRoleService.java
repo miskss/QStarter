@@ -35,7 +35,7 @@ public class SystemRoleService {
         this.systemHtmlRepository = systemHtmlRepository;
     }
 
-    public Set<SystemRole> findByRoleNameIn(Set<String> roleNames){
+    public Set<SystemRole> findByRoleNameIn(Set<String> roleNames) {
         return roleRepository.findByRoleNameIn(roleNames);
     }
 
@@ -51,7 +51,7 @@ public class SystemRoleService {
      * @return {@link List <SystemRole>}
      */
     public List<SystemRole> findAllWithoutSystemRole() {
-        return roleRepository.findAll(new Sort(Sort.Direction.DESC, "createTime")).stream()
+        return roleRepository.findAll(Sort.by(Sort.Direction.DESC, "createTime")).stream()
                 //剔除系统中固定的用户
                 .filter(role -> !RoleInSystem.contains(role.getRoleName()))
                 .collect(Collectors.toList());

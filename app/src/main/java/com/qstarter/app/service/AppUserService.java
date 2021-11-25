@@ -44,10 +44,10 @@ import java.util.Set;
 public class AppUserService {
 
 
-    private AppUserRepository repository;
-    private SystemRoleService systemRoleService;
-    private AccountService accountService;
-    private WxLoginService wxLoginService;
+    private final AppUserRepository repository;
+    private final SystemRoleService systemRoleService;
+    private final AccountService accountService;
+    private final WxLoginService wxLoginService;
 
 
     public AppUserService(AppUserRepository repository, SystemRoleService systemRoleService, AccountService accountService, WxLoginService wxLoginService) {
@@ -234,7 +234,7 @@ public class AppUserService {
             return criteriaBuilder.and(predicatesList.toArray(new Predicate[0]));
         };
 
-        Sort orderByCreateTime = new Sort(Sort.Direction.DESC, "createTime");
+        Sort orderByCreateTime = Sort.by(Sort.Direction.DESC, "createTime");
 
         return repository.findAll(specification, PageRequest.of(pageIndex, pageSize, orderByCreateTime));
     }
@@ -272,11 +272,11 @@ public class AppUserService {
             if (Objects.equals("asc",sort)){
                 desc = Sort.Direction.ASC;
             }
-            Sort orderByGold = new Sort(desc, "goldAccount_currentGold");
+            Sort orderByGold =  Sort.by(desc, "goldAccount_currentGold");
             return  repository.findAll(specification,PageRequest.of(pageIndex, pageSize, orderByGold));
 
         }
-        Sort orderByCreateTime = new Sort(Sort.Direction.DESC, "createTime");
+        Sort orderByCreateTime = Sort.by(Sort.Direction.DESC, "createTime");
 
         return repository.findAll(specification, PageRequest.of(pageIndex, pageSize, orderByCreateTime));
     }
