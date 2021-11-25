@@ -7,7 +7,7 @@ spring:
       ##上传的单文件大小
       max-file-size: 100MB
   datasource:
-    url: jdbc:mysql://localhost:3306/temp_boot?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/temp_boot??autoReconnect=true&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     username: peter
     password: peter
     driver-class-name: com.mysql.cj.jdbc.Driver
