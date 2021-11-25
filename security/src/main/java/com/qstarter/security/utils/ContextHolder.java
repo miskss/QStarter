@@ -1,15 +1,20 @@
 package com.qstarter.security.utils;
 
 import com.google.common.base.Strings;
+import com.qstarter.security.enums.RoleInSystem;
 import com.qstarter.security.exception.UnAuthorizationException;
 import com.qstarter.security.model.UserDetail;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Collection;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @author peter
@@ -47,6 +52,19 @@ public final class ContextHolder {
         return attributes.getRequest();
     }
 
+    public static String authenticationRoleName() {
+        Authentication authentication = getAuthentication();
+        if (authentication == null) return "";
+        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+        //过滤掉通用的权限角色
+        Set<String> roles = authorities.stream()
+                .map(GrantedAuthority::getAuthority)
+                .filter(RoleInSystem::notContainsNormalRole)
+                .collect(Collectors.toSet());
+        String roleName = roles.stream().findFirst().orElse("");
+        roleName = roleName.equalsIgnoreCase("ROLE_ANONYMOUS") ? "" : roleName;
+        return roleName;
+    }
 
     public static <T> void setRequestCache(String key, T data) {
         HttpServletRequest request = getRequest();

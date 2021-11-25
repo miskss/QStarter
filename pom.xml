@@ -28,13 +28,11 @@
     </properties>
 
     <dependencies>
-        <!--正式部署需删除掉，否则会报错-->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
-            <artifactId>swagger-bootstrap-ui</artifactId>
-            <version>1.8.8</version>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>3.0.3</version>
         </dependency>
-
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-hibernate5</artifactId>
@@ -118,19 +116,6 @@
             <version>2.3.6.RELEASE</version>
         </dependency>
 
-        <!--swagger-->
-        <!-- springboot 集成 jersey 、swagger 实现 JAX-RS Restful 開始 -->
-        <!-- swagger 静态资源 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
