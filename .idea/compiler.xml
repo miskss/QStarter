@@ -6,29 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="core" />
-        <module name="security" />
         <module name="app" />
         <module name="admin" />
+        <module name="core" />
+        <module name="security" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="admin" target="1.8" />
-      <module name="app" target="1.8" />
-      <module name="core" target="1.8" />
-      <module name="qstarter" target="1.8" />
-      <module name="security" target="1.8" />
-      <module name="starter" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="admin" options="-parameters" />
       <module name="app" options="-parameters" />
       <module name="core" options="-parameters" />
-      <module name="qstarter" options="-parameters" />
       <module name="security" options="-parameters" />
-      <module name="starter" options="-parameters" />
     </option>
   </component>
 </project>
