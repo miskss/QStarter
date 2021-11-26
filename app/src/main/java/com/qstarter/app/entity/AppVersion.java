@@ -4,6 +4,8 @@ import com.qstarter.core.entity.BaseEntity;
 import com.qstarter.core.enums.DeviceTypeEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -11,9 +13,9 @@ import javax.persistence.*;
  * @author peter
  * date: 2019-12-20 08:54
  **/
-@EqualsAndHashCode(callSuper = true)
 @Entity
-@Data
+@Getter
+@Setter
 public class AppVersion extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,5 +65,21 @@ public class AppVersion extends BaseEntity {
         appVersion.setContent(content);
         appVersion.setIosUrl(iosUrl);
         return appVersion;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AppVersion)) return false;
+
+        AppVersion that = (AppVersion) o;
+
+        return getId() != null ? getId().equals(that.getId()) : that.getId() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getId() != null ? getId().hashCode() : 0;
     }
 }

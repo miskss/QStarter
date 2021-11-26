@@ -1,10 +1,11 @@
 package com.qstarter.security.entity;
 
 import com.qstarter.core.entity.BaseEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -13,8 +14,8 @@ import java.util.Set;
  * @author peter
  * date: 2019-09-04 11:02
  **/
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "system_role")
 public class SystemRole extends BaseEntity {
@@ -46,5 +47,18 @@ public class SystemRole extends BaseEntity {
     )
     private Set<SystemResource> resources;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SystemRole)) return false;
 
+        SystemRole that = (SystemRole) o;
+
+        return getId() != null ? getId().equals(that.getId()) : that.getId() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getId() != null ? getId().hashCode() : 0;
+    }
 }

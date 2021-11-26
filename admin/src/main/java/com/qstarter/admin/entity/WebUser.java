@@ -6,6 +6,8 @@ import com.qstarter.security.common.SystemUserNameSuffix;
 import com.qstarter.security.entity.SystemUser;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,10 +21,10 @@ import javax.persistence.UniqueConstraint;
  * @author peter
  * date: 2019-09-06 10:09
  **/
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "web_user", uniqueConstraints = @UniqueConstraint(name = "web_user_username_uni_idx", columnNames = "username"))
-@Data
+@Getter
+@Setter
 public class WebUser extends BaseEntity implements SystemUserNameEncoder {
 
     @Id
@@ -45,5 +47,20 @@ public class WebUser extends BaseEntity implements SystemUserNameEncoder {
 
     public void initId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof WebUser)) return false;
+
+        WebUser webUser = (WebUser) o;
+
+        return getId() != null ? getId().equals(webUser.getId()) : webUser.getId() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getId() != null ? getId().hashCode() : 0;
     }
 }

@@ -7,6 +7,8 @@ import com.qstarter.security.common.SystemUserNameSuffix;
 import com.qstarter.security.entity.SystemUser;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,9 +18,9 @@ import java.util.UUID;
  * @author peter
  * date: 2019-09-27 09:21
  **/
-@EqualsAndHashCode(callSuper = true)
 @Entity
-@Data
+@Getter
+@Setter
 public class AppUser extends BaseEntity implements SystemUserNameEncoder {
 
     private static final int MAX_BANK_CARD = 3;
@@ -30,7 +32,6 @@ public class AppUser extends BaseEntity implements SystemUserNameEncoder {
     private String nickname;
 
     private String iconUrl;
-
 
     private String openId;
 
@@ -77,5 +78,21 @@ public class AppUser extends BaseEntity implements SystemUserNameEncoder {
 
     private void setId(Long id) {
         this.id = id;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AppUser)) return false;
+
+        AppUser appUser = (AppUser) o;
+
+        return getId() != null ? getId().equals(appUser.getId()) : appUser.getId() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getId() != null ? getId().hashCode() : 0;
     }
 }

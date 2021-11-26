@@ -1,9 +1,12 @@
 package com.qstarter.security.entity;
 
+import com.google.common.base.Objects;
 import com.qstarter.core.entity.BaseEntity;
 import com.qstarter.security.enums.HtmlType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,9 +19,9 @@ import java.util.List;
  * @author peter
  * date: 2019-11-07 10:54
  **/
-@EqualsAndHashCode(callSuper = true)
 @Entity
-@Data
+@Setter
+@Getter
 public class SystemHtml extends BaseEntity implements Serializable {
     private static final long serialVersionUID = 8244592664081929287L;
 
@@ -74,5 +77,19 @@ public class SystemHtml extends BaseEntity implements Serializable {
             html.setResources(systemResources);
         }
         return html;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SystemHtml)) return false;
+        SystemHtml that = (SystemHtml) o;
+        return Objects.equal(getId(), that.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getId());
     }
 }

@@ -1,9 +1,10 @@
 package com.qstarter.security.entity;
 
+import com.google.common.base.Objects;
 import com.qstarter.core.entity.BaseEntity;
 import com.qstarter.security.enums.OperationEnum;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 
@@ -14,8 +15,8 @@ import javax.persistence.*;
  * @author peter
  * date: 2019-09-04 16:00
  **/
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Getter
+@Setter
 @Entity
 public class SystemResource extends BaseEntity {
 
@@ -32,5 +33,16 @@ public class SystemResource extends BaseEntity {
     @Enumerated(value = EnumType.STRING)
     private OperationEnum operation;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SystemResource)) return false;
+        SystemResource that = (SystemResource) o;
+        return Objects.equal(getId(), that.getId());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getId());
+    }
 }
