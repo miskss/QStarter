@@ -3,6 +3,7 @@ package com.qstarter.app.quartz.job;
 import com.qstarter.core.constant.JobKeyConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
+import org.springframework.scheduling.quartz.QuartzJobBean;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -13,7 +14,7 @@ import java.util.Date;
  **/
 @Component
 @Slf4j
-public class QuartzJobDemo implements Job {
+public class QuartzJobDemo extends QuartzJobBean {
 
     public static final String JOB_KEY = JobKeyConstant.JOB_KEY_PREFIX + QuartzJobDemo.class.getSimpleName();
     public static final String JOB_GROUP_KEY = JobKeyConstant.JOB_GROUP_KEY_PREFIX + QuartzJobDemo.class.getSimpleName();
@@ -44,10 +45,8 @@ public class QuartzJobDemo implements Job {
 
     }
 
-
     @Override
-    public void execute(JobExecutionContext context) throws JobExecutionException {
-        //执行任务
+    protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
 
     }
 }

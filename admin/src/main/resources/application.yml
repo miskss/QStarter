@@ -3,13 +3,6 @@ spring:
     active: pro
   thymeleaf:
     cache: true
-  ## 静态资源的浏览器缓存设置
-  resources:
-    chain:
-      strategy:
-        content:
-          enabled: true
-          paths: /**
   jpa:
     open-in-view: false
   session:
@@ -19,6 +12,14 @@ spring:
     redis:
       repositories:
         enabled: false
+    ## 静态资源的浏览器缓存设置
+  web:
+    resources:
+      chain:
+        strategy:
+          content:
+            enabled: true
+            paths: /*
 project:
   project-name: temp-boot
   develop-name:

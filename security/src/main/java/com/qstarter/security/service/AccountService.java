@@ -22,6 +22,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.util.StringUtils;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -296,7 +297,7 @@ public class AccountService {
     private URI getUri() {
         String port = environment.getProperty(LOCAL_SERVER_PORT);
         String contextPath = environment.getProperty(LOCAL_SERVER_CONTEXT_PATH);
-        String url = LOCALHOST + port + contextPath + OAUTH_TOKEN;
+        String url = LOCALHOST + port + (StringUtils.hasText(contextPath) ? contextPath : "") + OAUTH_TOKEN;
         try {
             return new URI(url);
         } catch (URISyntaxException e) {

@@ -1,3 +1,8 @@
+datasource:
+  host: jdbc:mysql://localhost:3306
+  username: root
+  password:  123456
+
 spring:
   servlet:
     multipart:
@@ -7,9 +12,9 @@ spring:
       ##上传的单文件大小
       max-file-size: 150MB
   datasource:
-    url: jdbc:mysql://localhost:3306/temp_boot?autoReconnect=true&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
-    username: root
-    password: 123456
+    url: ${datasource.host}/temp_boot?autoReconnect=true&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: ${datasource.username}
+    password: ${datasource.password}
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       connection-timeout: 30000
@@ -53,7 +58,17 @@ spring:
             threadCount: 20
             threadsInheritContextClassLoaderOfInitializingThread: true
           ##数据库存储
+          dataSource:
+            quartzDB:
+              provider: hikaricp
+              driver: com.mysql.cj.jdbc.Driver
+              URL: ${datasource.host}/quartz?autoReconnect=true&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+              user: ${datasource.username}
+              password: ${datasource.password}
+              maxConnections: 10
           jobStore:
+            dataSource: quartzDB
+            tablePrefix: qrtz_
             class: org.quartz.impl.jdbcjobstore.JobStoreTX
             driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
             useProperties: true
